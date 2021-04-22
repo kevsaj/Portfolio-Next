@@ -2,6 +2,8 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 
 import Intro from '../components/Intro'
+import Icons from '../components/Icons'
+import Projects from '../components/Projects'
 
 const Header = dynamic(
   () => import('../components/Header'),
@@ -10,7 +12,7 @@ const Header = dynamic(
 
 export default function Home() {
   return (
-    <div className='h-screen w-screen bg-pink-200'>
+    <div className='h-full w-screen mb-36 bg-pink-200'>
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
@@ -18,7 +20,7 @@ export default function Home() {
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
-          content="Kevin Sajan Portfolio to showcase Web Development projects and work"
+          content="Kevin Sajan's Portfolio to showcase Web Development projects and work"
         />
         <link rel="apple-touch-icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css" />
@@ -28,6 +30,8 @@ export default function Home() {
       <div>
         <Header />
         <Intro />
+        <Icons />
+        <Projects />
       </div>
     </div>
   )

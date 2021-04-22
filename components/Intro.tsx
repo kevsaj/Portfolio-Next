@@ -9,7 +9,7 @@ function Intro() {
             <div className="pt-4 mx-auto">
                 <div className="flex flex-col mx-20 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80">
                     <div className="justify-center space-between mx-auto">
-                        <button className='items-center ml-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <button className='items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer">Github</a></button>
                         <Image src='/self.png' alt="self" width={150} height={150} className="rounded-full flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
                         <button className='items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="/Kevin Sajan Resume.pdf" download="Resume">Resume</a></button>
                     </div>
