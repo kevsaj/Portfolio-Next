@@ -4,7 +4,7 @@ import '../styles/Header.module.css'
 
 export default function Header(): JSX.Element {
     return <> {
-        <div className="logo pt-12 w-full mx-auto" >
+        <div className="logo pt-12 mx-auto" >
             <div className="logo w-full h-full mx-auto hover:bg-pink-200" >
                 <a className="m-auto" href = "https://github.com/kevsaj" target = "_blank" rel = "noopener noreferrer">
                 <svg id="name" className="p-4 mx-auto" width = "819" height = "158" viewBox = "0 0 819 158" xmlns = "http://www.w3.org/2000/svg" >
