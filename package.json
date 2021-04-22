@@ -30,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/kevsaj/Portfolio-Next/issues"
   },
-  "homepage": "https://github.com/kevsaj/Portfolio-Next#readme"
+  "homepage": "https://github.com/kevsaj/Portfolio-Next#readme",
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "typescript": "^4.2.4"
+  }
 }
