@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import Intro from '../components/Intro'
 import Icons from '../components/Icons'
 import Projects from '../components/Projects'
+import Contact from '../components/Contact'
 
 const Header = dynamic(
   () => import('../components/Header'),
@@ -12,7 +13,7 @@ const Header = dynamic(
 
 export default function Home() {
   return (
-    <div className='h-full w-screen mb-36 bg-pink-200'>
+    <div className='h-full w-full bg-pink-200'>
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
@@ -32,6 +33,7 @@ export default function Home() {
         <Intro />
         <Icons />
         <Projects />
+        <Contact />
       </div>
     </div>
   )
