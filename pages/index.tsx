@@ -8,7 +8,7 @@ import Contact from '../components/Contact'
 
 const Header = dynamic(
   () => import('../components/Header'),
-  { ssr: false }
+  { ssr: true }
 )
 
 export default function Home() {
