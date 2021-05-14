@@ -13,11 +13,11 @@ const Header = dynamic(
 
 export default function Home() {
   return (
-    <div className='h-full w-full bg-pink-200'>
+    <div className='h-full min-w-full bg-pink-200'>
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
@@ -28,7 +28,7 @@ export default function Home() {
         <title>Kevin Sajan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <div className='h-full'>
         <Header />
         <Intro />
         <Icons />

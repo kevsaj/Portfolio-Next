@@ -18,7 +18,7 @@ function Projects() {
                         <h1 className="font-extrabold text-lg">Dev Web</h1>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 text-md">A useful portal for developers to find news, job postings, industry podcasts and relevant information all in one spot.</h2>
+                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">A useful portal for developers to find news, job postings, industry podcasts and relevant information all in one spot.</h2>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -58,7 +58,7 @@ function Projects() {
                         <h1 className="font-extrabold text-lg">SpaceBook</h1>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                        <h2 className="md:px-8 text-md">Our own social media platform employing REST APIs to provide News, Gifs, Weather info whilst connecting with friends.</h2>
+                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Our own social media platform employing REST APIs to provide News, Gifs, Weather info whilst connecting with friends. Available on the <a href="https://play.google.com/store/apps/details?id=localhost_8080.twa" target="_blank" rel="noopener noreferrer" className='hover:text-blue-500 hover:uppercase hover:underline'>Google Store</a></h2>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -98,7 +98,7 @@ function Projects() {
                             <h1 className="font-extrabold text-lg">PerfectPairings</h1>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                        <h2 className="md:px-8 text-md">PerfectPairings will provide you with delicious food options and pair your selection with the perfect drink. Still not convinced? A GIF will Convince!</h2>
+                        <h2 className="md:px-8 mx-2 md:mx-1 text-md">PerfectPairings will provide you with delicious food options and pair your selection with the perfect drink. Still not convinced? A GIF will Convince!</h2>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">

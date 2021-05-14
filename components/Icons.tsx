@@ -6,7 +6,7 @@ function Icons() {
     return (
         <>
 
-            <div className="pt-4 mx-auto p-10 m-10">
+            <div className="pt-4 mx-auto flex flex-wrap overflow-x-scroll md:overflow-hidden items-center justify-center p-10 m-10">
                 <div className="flex flex-row justify-center items-center p-3 gap-5">
                     <div className="h-24 w-24">
                         <svg viewBox="0 0 128 128">
@@ -55,7 +55,7 @@ function Icons() {
                     </div>
                 </div>
             </div>
-            <div className="pb-20 mt-3 mx-auto">
+            <div className="pb-20 mt-3 flex flex-wrap overflow-x-scroll md:overflow-hidden items-center justify-center">
                 <div className="flex flex-row justify-center items-center px-3 gap-5">
                     <div className="h-24 w-24">
                         <svg viewBox="0 0 128 128">
