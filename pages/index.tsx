@@ -13,7 +13,7 @@ const Header = dynamic(
 
 export default function Home() {
   return (
-    <div className='h-full min-w-full bg-pink-200'>
+    <div className='h-full min-w-full'>
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
