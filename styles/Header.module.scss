@@ -1,49 +1,49 @@
-#name path:nth-child(1) {
-    stroke-dasharray: 512;
-    stroke-dashoffset: 512;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+.title {
+    font-family: "Josefin Sans";
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#name path:nth-child(2) {
-    stroke-dasharray: 515;
-    stroke-dashoffset: 515;
+.fonts {
+    font-size: clamp(3.75rem, 12vw, 12rem);
+    will-change: auto;
+    display: block;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-image: url("https://products.ls.graphics/mesh-gradients/images/14.-Prim_1.jpg");
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: bg 8s cubic-bezier(0.77, 0, 0.175, 1) 2s infinite;
 }
 
-#name path:nth-child(3) {
-    stroke-dasharray: 515;
-    stroke-dashoffset: 515;
-}
+@keyframes bg {
+    0% {
+        background-position: 5% 5%;
+    }
 
-#name path:nth-child(4) {
-    stroke-dasharray: 422;
-    stroke-dashoffset: 422;
-}
+    25% {
+        background-position: 5% 95%;
+        background-size: 250%;
+    }
 
-#name path:nth-child(5) {
-    stroke-dasharray: 422;
-    stroke-dashoffset: 422;
-}
+    50% {
+        background-position: 95% 95%;
+        background-size: 150%;
+    }
 
-#name path:nth-child(6) {
-    stroke-dasharray: 493;
-    stroke-dashoffset: 493;
-}
+    75% {
+        background-position: 5% 95%;
+    }
 
-#name path:nth-child(7) {
-    stroke-dasharray: 506;
-    stroke-dashoffset: 506;
-}
-
-#name path:nth-child(8) {
-    stroke-dasharray: 334;
-    stroke-dashoffset: 334;
-}
-
-#name path:nth-child(9) {
-    stroke-dasharray: 506;
-    stroke-dashoffset: 506;
-}
-
-#name path:nth-child(10) {
-    stroke-dasharray: 422;
-    stroke-dashoffset: 422;
+    100% {
+        background-position: 5% 5%;
+    }
 }
