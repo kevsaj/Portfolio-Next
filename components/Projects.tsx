@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
+import ReactImageFallback from "react-image-fallback";
 
 function Projects() {
 
@@ -9,10 +10,15 @@ function Projects() {
             <h1 className="mb-10 text-2xl font-bold" id="Projects">Projects</h1>
             <div className="pt-4 mx-auto flex flex-row flex-wrap gap-7 gap-y-14 justify-center items-center p-5 pb-20">
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                    <div className="mt-4 justify-center space-between mx-auto">
-                            <button className='items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Dev-Web" target="_blank" rel="noopener noreferrer">Github</a></button>
-                        <Image src='/assets/DevWeb.gif' alt="DevWeb" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
-                            <button className='items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://dev-web3.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
+                        <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Dev-Web" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <ReactImageFallback
+                            src="/assets/DevWeb.gif"
+                            fallbackImage="/assets/dev-web.png"
+                            initialImage="/assets/dev-web.png"
+                            alt="DevWeb"
+                            className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
+                        <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://dev-web3.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
                     </div>
                     <div className="m-2 justify-center mx-auto">
                         <h1 className="font-extrabold text-lg">Dev Web</h1>
@@ -49,10 +55,15 @@ function Projects() {
                     </div>
                 </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                    <div className="mt-4 justify-center space-between mx-auto">
-                        <button className='items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Spacebook" target="_blank" rel="noopener noreferrer">Github</a></button>
-                        <Image src='/assets/SpaceBook.gif' alt="SpaceBook" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
-                        <button className='items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://spacebookx.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
+                        <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Spacebook" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <ReactImageFallback
+                            src="/assets/SpaceBook.gif"
+                            fallbackImage="/assets/Spacebook.png"
+                            initialImage="/assets/Spacebook.png"
+                            alt="Spacebook"
+                            className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
+                        <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://spacebookx.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
                     </div>
                     <div className="m-2 justify-center mx-auto">
                         <h1 className="font-extrabold text-lg">SpaceBook</h1>
@@ -89,10 +100,15 @@ function Projects() {
                     </div>
                 </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                    <div className="mt-4 justify-center space-between mx-auto">
-                        <button className='items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/nagck/perfectpairings" target="_blank" rel="noopener noreferrer">Github</a></button>
-                        <Image src='/assets/PerfectPairings.gif' alt="PerfectPairings" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
-                        <button className='items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://nagck.github.io/perfectpairings/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
+                        <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/nagck/perfectpairings" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <ReactImageFallback
+                            src="/assets/PerfectPairings.gif"
+                            fallbackImage="/assets/PerfectPairings.jpg"
+                            initialImage="/assets/PerfectPairings.jpg"
+                            alt="PerfectPairings"
+                            className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
+                        <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://nagck.github.io/perfectpairings/" target="_blank" rel="noopener noreferrer">Live</a></button>
                     </div>
                     <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">PerfectPairings</h1>
@@ -129,10 +145,10 @@ function Projects() {
                     </div>
                 </div>
                     <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                        <div className="mt-4 justify-center space-between mx-auto">
-                            <button className='items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Google-Books-Search" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
+                            <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Google-Books-Search" target="_blank" rel="noopener noreferrer">Github</a></button>
                             <Image src='/assets/gbs.png' alt="Application" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-fill" />
-                            <button className='items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://google-bookssearch.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                            <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://google-bookssearch.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
                         </div>
                         <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">Google Books Searcher</h1>
@@ -169,12 +185,12 @@ function Projects() {
                         </div>
                     </div>
                     <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                        <div className="mt-4 justify-center flex flex-row items-end space-between mx-auto">
-                            <button className='items-center mr-3 h-8 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Workout-Tracker" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <div className="mt-4 justify-center items-end space-between mx-auto flex flex-row">
+                            <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Workout-Tracker" target="_blank" rel="noopener noreferrer">Github</a></button>
                             <div className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover">
                                 <Image src='/assets/WT.gif' alt="Application" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-fill" />
                             </div>
-                            <button className='items-center ml-3 h-8 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://gentle-earth-07565.herokuapp.com/?id=6039d718f690370015b90ac5" target="_blank" rel="noopener noreferrer">Live</a></button>
+                            <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://gentle-earth-07565.herokuapp.com/?id=6039d718f690370015b90ac5" target="_blank" rel="noopener noreferrer">Live</a></button>
                         </div>
                         <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">Workout-Tracker</h1>
