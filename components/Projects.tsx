@@ -6,7 +6,7 @@ function Projects() {
     return (
         <>
         <div className="flex flex-col justify-center items-center">
-            <h1 className="mb-10 text-2xl font-bold">Projects</h1>
+            <h1 className="mb-10 text-2xl font-bold" id="Projects">Projects</h1>
             <div className="pt-4 mx-auto flex flex-row flex-wrap gap-7 gap-y-14 justify-center items-center p-5 pb-20">
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
                     <div className="mt-4 justify-center space-between mx-auto">
