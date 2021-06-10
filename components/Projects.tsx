@@ -138,7 +138,7 @@ function Projects() {
                             <h1 className="font-extrabold text-lg">Google Books Searcher</h1>
                         </div>
                         <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 text-md">Search Google for your favorite books without any ads or distractions inside a clean design!</h2>
+                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Search Google for your favorite books without any ads or distractions inside a clean design!</h2>
                         </div>
                         <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                             <div className="h-10 w-10">
@@ -180,7 +180,7 @@ function Projects() {
                             <h1 className="font-extrabold text-lg">Workout-Tracker</h1>
                         </div>
                         <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 text-md">Workout Tracker app using Mongo database with a Mongoose schema and handle routes with Express</h2>
+                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Workout Tracker app using Mongo database with a Mongoose schema and handle routes with Express</h2>
                         </div>
                         <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                             <div className="h-10 w-10">
@@ -220,7 +220,7 @@ function Projects() {
                             <h1 className="font-extrabold text-lg">Budget Tracker</h1>
                         </div>
                         <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 text-md">Budget Tracker and Calculator - PWA app using Mongo, Mongoose, Express, Morgan for offline use</h2>
+                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Budget Tracker and Calculator - PWA app using Mongo, Mongoose, Express, Morgan for offline use</h2>
                         </div>
                         <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                             <div className="h-10 w-10">
@@ -260,7 +260,7 @@ function Projects() {
                         <h1 className="font-extrabold text-lg">Tic-Tac-Toe</h1>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                        <h2 className="md:px-8 text-md">Tic-Tac-Toe game to learn Angular and PWA potential hosted on Firebase</h2>
+                        <h2 className="md:px-8 mx-2 md:mx-1 text-md">Tic-Tac-Toe game to learn Angular and PWA potential hosted on Firebase</h2>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -299,7 +299,7 @@ function Projects() {
                         <h1 className="font-extrabold text-lg">Vue-Chat</h1>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 text-md">A chat app with the ability to record and upload audio from the device. Using Vue routing, Firebase and Tailwind CSS. Under construction</h2>
+                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">A chat app with the ability to record and upload audio from the device. Using Vue routing, Firebase and Tailwind CSS. Under construction</h2>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -334,7 +334,7 @@ function Projects() {
                             <h1 className="font-extrabold text-lg">HappyBirthdayWisher</h1>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 text-md">Yay Puppeteer - wish my friends a happy birthday! Fun use of the incredible power of Puppeteer to automate Facebook!</h2>
+                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Yay Puppeteer - wish my friends a happy birthday! Fun use of the incredible power of Puppeteer to automate Facebook!</h2>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
