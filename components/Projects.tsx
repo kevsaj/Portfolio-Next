@@ -147,7 +147,12 @@ function Projects() {
                     <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
                         <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
                             <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Google-Books-Search" target="_blank" rel="noopener noreferrer">Github</a></button>
-                            <Image src='/assets/gbs.png' alt="Application" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-fill" />
+                            <ReactImageFallback
+                                src="/assets/gbs.png"
+                                fallbackImage="/assets/gbs.png"
+                                initialImage="/assets/gbs.png"
+                                alt="Application"
+                                className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
                             <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://google-bookssearch.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
                         </div>
                         <div className="m-2 justify-center mx-auto">
@@ -188,7 +193,12 @@ function Projects() {
                         <div className="mt-4 justify-center items-end space-between mx-auto flex flex-row">
                             <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Workout-Tracker" target="_blank" rel="noopener noreferrer">Github</a></button>
                             <div className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover">
-                                <Image src='/assets/WT.gif' alt="Application" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-fill" />
+                            <ReactImageFallback
+                                src="/assets/WT.gif"
+                                fallbackImage="/assets/WT.png"
+                                initialImage="/assets/WT.png"
+                                alt="Workout Tracker"
+                                className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
                             </div>
                             <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://gentle-earth-07565.herokuapp.com/?id=6039d718f690370015b90ac5" target="_blank" rel="noopener noreferrer">Live</a></button>
                         </div>
@@ -227,10 +237,15 @@ function Projects() {
                         </div>
                     </div>
                     <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                        <div className="mt-4 justify-center space-between mx-auto">
-                            <button className='items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Budget-Tracker" target="_blank" rel="noopener noreferrer">Github</a></button>
-                            <Image src='/assets/BT.gif' alt="Budget Tracker" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
-                            <button className='items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://immense-castle-02383.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
+                            <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Budget-Tracker" target="_blank" rel="noopener noreferrer">Github</a></button>
+                            <ReactImageFallback
+                                src="/assets/BT.gif"
+                                fallbackImage="/assets/BT.png"
+                                initialImage="/assets/BT.png"
+                                alt="Budget Tracker"
+                                className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
+                            <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://immense-castle-02383.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
                         </div>
                         <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">Budget Tracker</h1>
@@ -267,10 +282,15 @@ function Projects() {
                         </div>
                     </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                    <div className="mt-4 justify-center space-between mx-auto">
-                        <button className='items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Fun-with-Angular" target="_blank" rel="noopener noreferrer">Github</a></button>
-                        <Image src='/assets/Angular.gif' alt="Angular" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-fill" />
-                        <button className='items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Fun-with-Angular" target="_blank" rel="noopener noreferrer">Live</a></button>
+                    <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
+                        <button className='h8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Fun-with-Angular" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <ReactImageFallback
+                            src="/assets/Angular.gif"
+                            fallbackImage="/assets/Angular.png"
+                            initialImage="/assets/Angular.png"
+                            alt="Angular app"
+                            className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
+                        <button className='h8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Fun-with-Angular" target="_blank" rel="noopener noreferrer">Live</a></button>
                     </div>
                     <div className="m-2 justify-center mx-auto">
                         <h1 className="font-extrabold text-lg">Tic-Tac-Toe</h1>
@@ -341,10 +361,15 @@ function Projects() {
                     </div>
                 </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                    <div className="mt-4 justify-center space-between mx-auto">
-                            <button className='items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/HappyBirthdayWisher" target="_blank" rel="noopener noreferrer">Github</a></button>
-                        <Image src='/assets/fb.gif' alt="Puppeteer app" width={150} height={150} className="rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
-                            <button className='items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/HappyBirthdayWisher" target="_blank" rel="noopener noreferrer">Live</a></button>
+                    <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
+                        <button className='h8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/HappyBirthdayWisher" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <ReactImageFallback
+                            src="/assets/fb.gif"
+                            fallbackImage="/assets/PT.png"
+                            initialImage="/assets/PT.png"
+                            alt="Puppeteer app"
+                            className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover" />
+                        <button className='h8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/HappyBirthdayWisher" target="_blank" rel="noopener noreferrer">Live</a></button>
                     </div>
                     <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">HappyBirthdayWisher</h1>
