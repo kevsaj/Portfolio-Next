@@ -12,7 +12,7 @@ This is my Portfolio displaying my coolest projects
 
 Page is live: [on Vercel](https://www.ksajan.page/)
 
-![Should Look like this lol](https://github.com/kevsaj/Portfolio-Next/tree/main/assets/KS.gif)
+![Should Look like this lol](https://github.com/kevsaj/Portfolio-Next/blob/main/assets/KS.gif)
 
 # Installation
 * Learn Full-Stack Web Development magic!
