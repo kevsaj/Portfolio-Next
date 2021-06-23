@@ -24,8 +24,8 @@ function ContactForm() {
             </form>
 
             <div className="flex flex-row gap-4">
-                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="kevin-sajan" data-version="v1"><a class="logo border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2 badge-base__link LI-simple-link" href="https://ca.linkedin.com/in/kevin-sajan?trk=profile-badge" target="_blank" rel="noopener noreferrer">Kevin Sajan on LinkedIn</a></div>
-                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="kevin-sajan" data-version="v1"><a class="logo mr-3 border border-purple-400 hover:bg-purple-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-purple-300 text-sm py-1 px-2 badge-base__link LI-simple-link" href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer">Kevin Sajan on Github</a></div>
+                <div><a className="logo border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2 badge-base__link LI-simple-link" href="https://ca.linkedin.com/in/kevin-sajan?trk=profile-badge" target="_blank" rel="noopener noreferrer">Kevin Sajan on LinkedIn</a></div>
+                <div><a className="logo mr-3 border border-purple-400 hover:bg-purple-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-purple-300 text-sm py-1 px-2 badge-base__link LI-simple-link" href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer">Kevin Sajan on Github</a></div>
             </div>
             <br>
             </br>
