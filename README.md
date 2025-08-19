@@ -10,7 +10,7 @@ This is my Portfolio displaying my coolest projects
 * [Credits](#Credits)
 * [License](#License)
 
-Page is live: [on Vercel](https://www.ksajan.page/)
+Page is live: [on Vercel](https://kisstudios.net/)
 
 ![Should Look like this lol](https://github.com/kevsaj/Portfolio-Next/blob/main/assets/KS.gif)
 
