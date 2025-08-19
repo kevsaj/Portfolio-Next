@@ -1,8 +1,8 @@
 import { FormspreeProvider } from '@formspree/react';
+import type { AppProps } from 'next/app';
 import '../styles/globals.scss'
-import GetServerSideProps from "next/app"
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <FormspreeProvider project="{your-project-id}">
       <Component {...pageProps} />
