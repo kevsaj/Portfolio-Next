@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -20,6 +21,17 @@ body {
     radial-gradient(at 77% 66%, hsla(272, 83%, 91%, 1) 0, transparent 50%),
     radial-gradient(at 0% 0%, hsla(15, 52%, 92%, 1) 0, transparent 50%);
   animation: bg 20s cubic-bezier(0.77, 0, 0.175, 1) 20s infinite normal forwards;
+}
+
+/* Dark mode styles */
+.dark body {
+  background-image: radial-gradient(at 95% 92%, hsla(220, 30%, 15%, 1) 0, transparent 50%),
+    radial-gradient(at 98% 2%, hsla(240, 40%, 20%, 1) 0, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(260, 30%, 18%, 1) 0, transparent 50%),
+    radial-gradient(at 40% 39%, hsla(280, 35%, 22%, 1) 0, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(300, 25%, 16%, 1) 0, transparent 50%),
+    radial-gradient(at 77% 66%, hsla(320, 40%, 25%, 1) 0, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(200, 30%, 12%, 1) 0, transparent 50%);
 }
 
 a {
