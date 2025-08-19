@@ -1,9 +1,9 @@
-import firebase from 'firebase/app'
-import 'firebase/auth';
-import 'firebase/firestore';
-import 'firebase/storage';
+import { initializeApp, getApps } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// For Firebase JS SDK v9+
 const firebaseConfig = {
     apiKey: "AIzaSyA-Be9IIqMZnazjvGZqjyOy3zku_eYwpEY",
     authDomain: "kevin-sajan.firebaseapp.com",
@@ -14,10 +14,10 @@ const firebaseConfig = {
     measurementId: "G-7LG285JVGH"
 };
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig)
-}
+// Initialize Firebase
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
-export const storage = firebase.storage();
+export const auth = getAuth(app);
+export const firestore = getFirestore(app);
+export const storage = getStorage(app);
+export default app;

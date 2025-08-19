@@ -13,8 +13,7 @@ const Header = dynamic(
 
 export default function Home() {
   return (
-    <div className='h-full min-w-full'>
-      <Head>
+    <div className='h-full min-w-full'>      <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +23,6 @@ export default function Home() {
           content="Kevin Sajan's Portfolio to showcase Web Development projects and work"
         />
         <link rel="apple-touch-icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css" />
         <title>Kevin Sajan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
