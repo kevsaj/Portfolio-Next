@@ -6,8 +6,8 @@ function Intro() {
     return (
         <>
 
-            <div className="pt-4 mx-auto">
-                <div className="flex flex-col md:mx-20 mx-2 bg-gradient-to-b from-transparent to-pink-200 rounded-3xl h-auto opacity-80">
+            <div id="intro" className="pt-4 mx-auto">
+                <div className="flex flex-col md:mx-20 mx-2 bg-gradient-to-b from-transparent to-pink-200 dark:from-transparent dark:to-gray-800/50 rounded-3xl h-auto opacity-80">
                     <div className="justify-center space-between mx-auto flex flex-row items-end">
                         <a href="https://www.linkedin.com/in/kevin-sajan/" target="_blank" rel="noopener noreferrer"><button className='hidden md:inline items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'>LinkedIn</button></a>
                         <a href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer"><button className='items-center mr-3 border border-purple-400 hover:bg-purple-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-purple-300 text-sm py-1 px-2'>Github</button></a>
@@ -23,13 +23,13 @@ function Intro() {
                         <a href="#Projects"><button className='hidden md:inline items-center ml-3 border border-green-400 hover:bg-green-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-green-300 text-sm py-1 px-2'>Projects</button></a>
                     </div>
                     <div className="m-2 justify-center mx-auto">
-                        <h1 className="font-extrabold text-lg">Kevin Sajan</h1>
+                        <h1 className="font-extrabold text-lg dark:text-white">Kevin Sajan</h1>
                     </div>
                     <div className="mb-2 px-2 md:px-1 justify-center mx-auto">
-                        <h2 className="font-semibold md:px-32 text-md">Full Stack Web Developer known as an innovative problem-solver passionate about developing web apps, with a focus on intuitive Front-End design. Strengths in creativity, meeting deadlines, and teamwork.</h2>
+                        <h2 className="font-semibold md:px-32 text-md dark:text-gray-200">Full-Stack Developer and aspiring Data Scientist with hands-on experience in Python, cloud-native development, and data visualization. Skilled in building scalable applications, automating workflows, and transforming complex datasets into actionable insights using tools like Power BI, Azure, and React. Passionate about solving real-world problems at the intersection of AI, software engineering, and data science.</h2>
                     </div>
                     <div className="mb-4 justify-center mx-auto">
-                        <h2 className="font-light text-md">Toronto, Canada</h2>
+                        <h2 className="font-light text-md dark:text-gray-300">Toronto, Ontario, Canada</h2>
                     </div>
                 </div>
             </div>

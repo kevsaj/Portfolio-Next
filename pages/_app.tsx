@@ -4,7 +4,7 @@ import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <FormspreeProvider project="{your-project-id}">
+    <FormspreeProvider project="mdoykbyg">
       <Component {...pageProps} />
     </FormspreeProvider>
   );
