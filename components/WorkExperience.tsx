@@ -1,6 +1,7 @@
 import React from 'react';
 import FlipCard from './FlipCard';
 import CompactPointCloudDemo from './CompactPointCloudDemo';
+import FinancialDataChart from './FinancialDataChart';
 
 function WorkExperience() {
     return (
@@ -91,42 +92,70 @@ function WorkExperience() {
                         </FlipCard>
                     </div>
 
-                    {/* Deloitte */}
-                    <div className="mb-8 bg-gradient-to-b from-pink-200 to-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden opacity-80">
-                        <div className="p-8">
-                            <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                                <div>
-                                    <h2 className="text-2xl font-bold text-gray-900">Financial Advisory & Tax Technician</h2>
-                                    <h3 className="text-xl font-semibold text-green-600 mb-2">Deloitte</h3>
+                    {/* Deloitte - Flip Card */}
+                    <div className="mb-8">
+                        <FlipCard
+                            autoFlip={true}
+                            flipInterval={7000}
+                            backContent={
+                                <div className="bg-gradient-to-br from-green-900 to-gray-900 rounded-3xl shadow-lg p-8 pb-16 md:pb-8 text-white h-full">
+                                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+                                        <div>
+                                            <h2 className="text-2xl font-bold text-white">Process Automation Analytics</h2>
+                                            <h3 className="text-xl font-semibold text-green-400 mb-2">Live Dashboard</h3>
+                                        </div>
+                                        <div className="text-gray-300 font-medium">
+                                            Financial Efficiency
+                                        </div>
+                                    </div>
+                                    
+                                    <FinancialDataChart />
+                                    
+                                    <div className="mt-6 mb-4 md:mb-0 text-gray-300 text-sm">
+                                        <p className="mb-2">🤖 <strong>Automation:</strong> Puppeteer web scraping, document processing</p>
+                                        <p className="mb-2">📋 <strong>Analysis:</strong> Invoice auditing, tax compliance, financial reporting</p>
+                                        <p>⚡ <strong>Results:</strong> 95%+ accuracy with 300+ hours saved quarterly</p>
+                                    </div>
                                 </div>
-                                <div className="text-gray-600 font-medium">
-                                    February 2019 - July 2021
+                            }
+                        >
+                            <div className="bg-gradient-to-b from-pink-200 to-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden opacity-80">
+                                <div className="p-8 pb-16">
+                                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                                        <div>
+                                            <h2 className="text-2xl font-bold text-gray-900">Financial Advisory & Tax Technician</h2>
+                                            <h3 className="text-xl font-semibold text-green-600 mb-2">Deloitte</h3>
+                                        </div>
+                                        <div className="text-gray-600 font-medium">
+                                            February 2019 - July 2021
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="space-y-3 text-gray-700">
+                                        <div className="flex items-start">
+                                            <span className="text-green-500 mr-2 mt-1">▶</span>
+                                            <p>Automated <strong>document linking and data entry</strong> using Puppeteer, improving efficiency and accuracy</p>
+                                        </div>
+                                        <div className="flex items-start">
+                                            <span className="text-green-500 mr-2 mt-1">▶</span>
+                                            <p>Audited invoices and tax returns to identify discrepancies and resolve client-vendor disputes</p>
+                                        </div>
+                                        <div className="flex items-start">
+                                            <span className="text-green-500 mr-2 mt-1">▶</span>
+                                            <p>Conducted <strong>financial analysis</strong> and supported compliance across multiple advisory engagements</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="mt-6 flex flex-wrap gap-2">
+                                        {['Puppeteer', 'Financial Analysis', 'Tax Compliance', 'Process Automation'].map((tech) => (
+                                            <span key={tech} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <div className="space-y-3 text-gray-700">
-                                <div className="flex items-start">
-                                    <span className="text-green-500 mr-2 mt-1">▶</span>
-                                    <p>Automated <strong>document linking and data entry</strong> using Puppeteer, improving efficiency and accuracy</p>
-                                </div>
-                                <div className="flex items-start">
-                                    <span className="text-green-500 mr-2 mt-1">▶</span>
-                                    <p>Audited invoices and tax returns to identify discrepancies and resolve client-vendor disputes</p>
-                                </div>
-                                <div className="flex items-start">
-                                    <span className="text-green-500 mr-2 mt-1">▶</span>
-                                    <p>Conducted <strong>financial analysis</strong> and supported compliance across multiple advisory engagements</p>
-                                </div>
-                            </div>
-                            
-                            <div className="mt-6 flex flex-wrap gap-2">
-                                {['Puppeteer', 'Financial Analysis', 'Tax Compliance', 'Process Automation'].map((tech) => (
-                                    <span key={tech} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
+                        </FlipCard>
                     </div>
 
                     {/* Education Highlight */}
