@@ -51,11 +51,9 @@ function FloatingNav() {
     }, []);
 
     const scrollToSection = (sectionId: string) => {
-        console.log('Scrolling to:', sectionId); // Debug log
         const element = document.getElementById(sectionId);
         
         if (element) {
-            console.log('Element found:', element); // Debug log
             element.scrollIntoView({ 
                 behavior: 'smooth',
                 block: 'start'
@@ -63,8 +61,6 @@ function FloatingNav() {
             
             // Update active section immediately for better UX
             setActiveSection(sectionId);
-        } else {
-            console.log('Element not found for ID:', sectionId); // Debug log
         }
     };
 

@@ -315,7 +315,7 @@ export default function Contact() {
                                     required
                                     value={formData.name}
                                     onChange={handleInputChange}
-                                    placeholder="John Doe"
+                                    placeholder="Kevin Sajan"
                                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:text-white transition-all duration-300 placeholder-gray-400 ${
                                         validationErrors.name 
                                             ? 'border-red-500 dark:border-red-400' 
@@ -341,7 +341,7 @@ export default function Contact() {
                                     required
                                     value={formData.email}
                                     onChange={handleInputChange}
-                                    placeholder="john@example.com"
+                                    placeholder="kevsaj@gmail.com"
                                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:text-white transition-all duration-300 placeholder-gray-400 ${
                                         validationErrors.email 
                                             ? 'border-red-500 dark:border-red-400' 
