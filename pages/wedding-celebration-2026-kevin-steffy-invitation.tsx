@@ -6,10 +6,241 @@ import FallingPetalsBackground from '../components/FallingPetalsBackground';
 export default function WeddingInvitation() {
     const [showRSVP, setShowRSVP] = useState(false);
     const [animateIn, setAnimateIn] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        attending: '',
+        events: [] as string[],
+        guests: '1',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState('');
+    const [formErrors, setFormErrors] = useState<{[key: string]: string}>({});
+    const [lastSubmissionTime, setLastSubmissionTime] = useState<number>(0);
+    const [submissionCount, setSubmissionCount] = useState<number>(0);
 
     useEffect(() => {
         setAnimateIn(true);
+        
+        // Check localStorage for rate limiting data
+        const lastSubmit = localStorage.getItem('lastRSVPSubmit');
+        const submitCount = localStorage.getItem('rsvpSubmitCount');
+        if (lastSubmit) {
+            setLastSubmissionTime(parseInt(lastSubmit));
+        }
+        if (submitCount) {
+            setSubmissionCount(parseInt(submitCount));
+        }
     }, []);
+
+    const validateForm = () => {
+        const errors: {[key: string]: string} = {};
+        
+        // Name validation with sanitization
+        const namePattern = /^[a-zA-Z\s\-'.,]+$/;
+        if (!formData.name.trim()) {
+            errors.name = 'Name is required';
+        } else if (formData.name.trim().length < 2) {
+            errors.name = 'Name must be at least 2 characters';
+        } else if (!namePattern.test(formData.name.trim())) {
+            errors.name = 'Name contains invalid characters';
+        } else if (formData.name.trim().length > 100) {
+            errors.name = 'Name is too long';
+        }
+        
+        // Phone validation with stricter pattern
+        if (!formData.phone.trim()) {
+            errors.phone = 'Phone number is required';
+        } else {
+            const phoneRegex = /^[\+]?[1-9][\d\s\-\(\)\.]{9,19}$/;
+            const cleanPhone = formData.phone.replace(/[\s\-\(\)\.]/g, '');
+            if (!phoneRegex.test(formData.phone) || cleanPhone.length < 10 || cleanPhone.length > 15) {
+                errors.phone = 'Please enter a valid phone number';
+            }
+        }
+        
+        // Attendance validation
+        if (!formData.attending || !['yes', 'no'].includes(formData.attending)) {
+            errors.attending = 'Please select your attendance status';
+        }
+        
+        // Events validation (only if attending)
+        if (formData.attending === 'yes') {
+            if (!formData.events || formData.events.length === 0) {
+                errors.events = 'Please select which event(s) you will attend';
+            } else if (!formData.events.every(event => ['betrothal', 'wedding'].includes(event))) {
+                errors.events = 'Invalid event selection';
+            }
+        }
+        
+        // Guests validation
+        if (!['1', '2', '3', '4', '5'].includes(formData.guests)) {
+            errors.guests = 'Please select a valid number of guests';
+        }
+        
+        // Message validation with content filtering
+        if (formData.message) {
+            if (formData.message.length > 500) {
+                errors.message = 'Message must be less than 500 characters';
+            }
+            // Check for potential spam/malicious content
+            const suspiciousPatterns = [
+                /<script/i, /javascript:/i, /on\w+=/i, /<iframe/i, 
+                /http[s]?:\/\//i, /www\./i, /\.com/i, /\.org/i, /\.net/i
+            ];
+            if (suspiciousPatterns.some(pattern => pattern.test(formData.message))) {
+                errors.message = 'Message contains prohibited content';
+            }
+        }
+        
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+
+    const sanitizeInput = (input: string): string => {
+        return input
+            .replace(/[<>\"'&]/g, '') // Remove potential HTML/script characters
+            .replace(/\s+/g, ' ') // Normalize whitespace
+            .trim();
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        
+        // Handle checkbox arrays for events
+        if (name === 'events') {
+            const checkbox = e.target as HTMLInputElement;
+            setFormData(prev => ({
+                ...prev,
+                events: checkbox.checked 
+                    ? [...prev.events, value]
+                    : prev.events.filter(event => event !== value)
+            }));
+        } else {
+            // Sanitize input in real-time for text fields
+            let sanitizedValue = value;
+            if (name === 'name' || name === 'message') {
+                sanitizedValue = sanitizeInput(value);
+            }
+            
+            // Clear events when attendance changes to "no"
+            if (name === 'attending' && value === 'no') {
+                setFormData(prev => ({
+                    ...prev,
+                    [name]: sanitizedValue,
+                    events: []
+                }));
+            } else {
+                setFormData(prev => ({
+                    ...prev,
+                    [name]: sanitizedValue
+                }));
+            }
+        }
+        
+        // Clear error for this field when user starts typing
+        if (formErrors[name]) {
+            setFormErrors(prev => ({
+                ...prev,
+                [name]: ''
+            }));
+        }
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setSubmitMessage('');
+        
+        // Rate limiting checks
+        const now = Date.now();
+        const timeSinceLastSubmit = now - lastSubmissionTime;
+        const RATE_LIMIT_WINDOW = 60000; // 1 minute
+        const MAX_SUBMISSIONS_PER_HOUR = 3;
+        
+        // Check if user is submitting too frequently
+        if (timeSinceLastSubmit < RATE_LIMIT_WINDOW) {
+            setSubmitMessage('Please wait a moment before submitting again.');
+            return;
+        }
+        
+        // Check hourly submission limit
+        const oneHourAgo = now - (60 * 60 * 1000);
+        if (lastSubmissionTime > oneHourAgo && submissionCount >= MAX_SUBMISSIONS_PER_HOUR) {
+            setSubmitMessage('Too many submissions. Please try again later.');
+            return;
+        }
+        
+        // Validate form before submission
+        if (!validateForm()) {
+            setSubmitMessage('Please correct the errors above and try again.');
+            return;
+        }
+        
+        setIsSubmitting(true);
+
+        try {
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkan1Zoy38rpZyT2vxMtcnV5no5JLx-5ZGzaBv_2lHBXeiGkOIGzFYjr3vttCnQvX-/exec';
+            
+            // Add security token and timestamp
+            const securityToken = btoa(now.toString()).slice(0, 16); // Simple token based on timestamp
+            
+            const params = new URLSearchParams({
+                name: sanitizeInput(formData.name.trim()),
+                phone: sanitizeInput(formData.phone.trim()),
+                attending: formData.attending,
+                events: formData.events.join(', '),
+                guests: formData.guests,
+                message: sanitizeInput(formData.message.trim()),
+                timestamp: new Date().toISOString(),
+                token: securityToken,
+                userAgent: navigator.userAgent.slice(0, 100) // Basic fingerprinting
+            });
+            
+            const urlWithParams = `${GOOGLE_SCRIPT_URL}?${params.toString()}`;
+            
+            // Add timeout to prevent hanging requests
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+            
+            await fetch(urlWithParams, {
+                method: 'GET',
+                mode: 'no-cors',
+                signal: controller.signal
+            });
+            
+            clearTimeout(timeoutId);
+
+            // Update rate limiting data
+            setLastSubmissionTime(now);
+            const newSubmissionCount = timeSinceLastSubmit > (60 * 60 * 1000) ? 1 : submissionCount + 1;
+            setSubmissionCount(newSubmissionCount);
+            
+            // Store in localStorage for persistence
+            localStorage.setItem('lastRSVPSubmit', now.toString());
+            localStorage.setItem('rsvpSubmitCount', newSubmissionCount.toString());
+
+            setSubmitMessage('Thank you! Your RSVP has been submitted successfully. We look forward to celebrating with you!');
+            setFormData({
+                name: '',
+                phone: '',
+                attending: '',
+                events: [],
+                guests: '1',
+                message: ''
+            });
+            setFormErrors({});
+            
+        } catch (error) {
+            if (error instanceof Error && error.name === 'AbortError') {
+                setSubmitMessage('Request timed out. Please check your connection and try again.');
+            } else {
+                setSubmitMessage('We apologize, but there was an error submitting your RSVP. Please try again or contact us directly.');
+            }
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <>
@@ -159,18 +390,18 @@ export default function WeddingInvitation() {
 
                         {/* Couple's Names */}
                         <div className="text-center mb-8 py-2">
-                            <h1 className="animated-text text-6xl md:text-7xl font-bold mb-3 py-1 leading-tight" style={{ 
+                            <h1 className="animated-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 py-1 leading-tight" style={{ 
                                 fontFamily: 'Great Vibes, cursive',
                                 textShadow: '2px 2px 4px rgba(212, 175, 55, 0.4)',
                                 lineHeight: '1.2'
                             }}>
                                 Kevin Sajan
                             </h1>
-                            <p className="text-2xl italic mb-3 py-1" style={{ 
+                            <p className="text-xl sm:text-2xl italic mb-3 py-1" style={{ 
                                 fontFamily: 'Playfair Display, serif',
                                 color: '#8b6914'
                             }}>with</p>
-                            <h1 className="animated-text text-6xl md:text-7xl font-bold py-1 leading-tight" style={{ 
+                            <h1 className="animated-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold py-1 leading-tight" style={{ 
                                 fontFamily: 'Great Vibes, cursive',
                                 textShadow: '2px 2px 4px rgba(212, 175, 55, 0.4)',
                                 lineHeight: '1.2'
@@ -290,63 +521,203 @@ export default function WeddingInvitation() {
                             <h3 className="text-2xl font-serif mb-6 text-center text-yellow-700">
                                 Please Respond
                             </h3>
-                            <form className="space-y-4">
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div>
                                     <label className="block text-gray-700 text-sm font-serif font-medium mb-2">
-                                        Name(s)
+                                        Full Name(s) <span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="text"
-                                        className="w-full px-4 py-2 border border-yellow-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif"
-                                        placeholder="Your name(s)"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif transition-colors ${
+                                            formErrors.name ? 'border-red-300 bg-red-50' : 'border-yellow-300'
+                                        }`}
+                                        placeholder="Enter your full name(s)"
+                                        maxLength={100}
                                     />
-                                </div>
-                                
-                                <div>
-                                    <label className="block text-gray-700 text-sm font-serif font-medium mb-2">
-                                        Will you be attending?
-                                    </label>
-                                    <div className="space-y-2">
-                                        <label className="flex items-center font-serif">
-                                            <input type="radio" name="attending" value="yes" className="mr-2 text-yellow-500" />
-                                            <span>Joyfully accepts</span>
-                                        </label>
-                                        <label className="flex items-center font-serif">
-                                            <input type="radio" name="attending" value="no" className="mr-2 text-yellow-500" />
-                                            <span>Regretfully declines</span>
-                                        </label>
-                                    </div>
+                                    {formErrors.name && (
+                                        <p className="text-red-500 text-sm mt-1 font-serif">{formErrors.name}</p>
+                                    )}
                                 </div>
 
                                 <div>
                                     <label className="block text-gray-700 text-sm font-serif font-medium mb-2">
-                                        Number of guests
+                                        Phone Number <span className="text-red-500">*</span>
                                     </label>
-                                    <select className="w-full px-4 py-2 border border-yellow-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif transition-colors ${
+                                            formErrors.phone ? 'border-red-300 bg-red-50' : 'border-yellow-300'
+                                        }`}
+                                        placeholder="Enter your phone number"
+                                        maxLength={20}
+                                    />
+                                    {formErrors.phone && (
+                                        <p className="text-red-500 text-sm mt-1 font-serif">{formErrors.phone}</p>
+                                    )}
+                                </div>
+                                
+                                <div>
+                                    <label className="block text-gray-700 text-sm font-serif font-medium mb-3">
+                                        Will you be attending? <span className="text-red-500">*</span>
+                                    </label>
+                                    <div className={`space-y-3 p-3 rounded-lg border ${
+                                        formErrors.attending ? 'border-red-300 bg-red-50' : 'border-yellow-200 bg-yellow-50'
+                                    }`}>
+                                        <label className="flex items-center font-serif cursor-pointer hover:bg-yellow-100 p-2 rounded">
+                                            <input 
+                                                type="radio" 
+                                                name="attending" 
+                                                value="yes" 
+                                                checked={formData.attending === 'yes'}
+                                                onChange={handleInputChange}
+                                                className="mr-3 text-yellow-500 focus:ring-yellow-400" 
+                                            />
+                                            <span className="text-gray-700">✨ Joyfully accepts with pleasure</span>
+                                        </label>
+                                        <label className="flex items-center font-serif cursor-pointer hover:bg-yellow-100 p-2 rounded">
+                                            <input 
+                                                type="radio" 
+                                                name="attending" 
+                                                value="no" 
+                                                checked={formData.attending === 'no'}
+                                                onChange={handleInputChange}
+                                                className="mr-3 text-yellow-500 focus:ring-yellow-400" 
+                                            />
+                                            <span className="text-gray-700">💌 Regretfully declines with love</span>
+                                        </label>
+                                    </div>
+                                    {formErrors.attending && (
+                                        <p className="text-red-500 text-sm mt-1 font-serif">{formErrors.attending}</p>
+                                    )}
+                                </div>
+
+                                {/* Event Selection - Only show if attending */}
+                                {formData.attending === 'yes' && (
+                                    <div>
+                                        <label className="block text-gray-700 text-sm font-serif font-medium mb-3">
+                                            Which event(s) will you attend? <span className="text-red-500">*</span>
+                                        </label>
+                                        <div className={`space-y-3 p-4 rounded-lg border ${
+                                            formErrors.events ? 'border-red-300 bg-red-50' : 'border-yellow-200 bg-yellow-50'
+                                        }`}>
+                                            <label className="flex items-start font-serif cursor-pointer hover:bg-yellow-100 p-3 rounded transition-colors">
+                                                <input 
+                                                    type="checkbox" 
+                                                    name="events" 
+                                                    value="betrothal" 
+                                                    checked={formData.events.includes('betrothal')}
+                                                    onChange={handleInputChange}
+                                                    className="mr-3 mt-1 text-yellow-500 focus:ring-yellow-400" 
+                                                />
+                                                <div>
+                                                    <span className="text-gray-700 font-medium">💍 Betrothal Ceremony</span>
+                                                    <p className="text-sm text-gray-600 mt-1">December 29th, 2025 at 5:00 PM<br/>St. Mary's Church, Podimattom</p>
+                                                </div>
+                                            </label>
+                                            <label className="flex items-start font-serif cursor-pointer hover:bg-yellow-100 p-3 rounded transition-colors">
+                                                <input 
+                                                    type="checkbox" 
+                                                    name="events" 
+                                                    value="wedding" 
+                                                    checked={formData.events.includes('wedding')}
+                                                    onChange={handleInputChange}
+                                                    className="mr-3 mt-1 text-yellow-500 focus:ring-yellow-400" 
+                                                />
+                                                <div>
+                                                    <span className="text-gray-700 font-medium">👰🤵 Wedding Ceremony</span>
+                                                    <p className="text-sm text-gray-600 mt-1">January 1st, 2026 at 11:00 AM<br/>Mary Matha Church, Ollur</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        {formErrors.events && (
+                                            <p className="text-red-500 text-sm mt-1 font-serif">{formErrors.events}</p>
+                                        )}
+                                    </div>
+                                )}
+
+                                <div>
+                                    <label className="block text-gray-700 text-sm font-serif font-medium mb-2">
+                                        Number of guests (including yourself)
+                                    </label>
+                                    <select 
+                                        name="guests"
+                                        value={formData.guests}
+                                        onChange={handleInputChange}
+                                        className="w-full px-4 py-3 border border-yellow-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif bg-white"
+                                    >
+                                        <option value="1">1 Guest</option>
+                                        <option value="2">2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5">5+ Guests</option>
                                     </select>
                                 </div>
 
                                 <div>
                                     <label className="block text-gray-700 text-sm font-serif font-medium mb-2">
-                                        Special requests or message
+                                        Special requests or message for the couple
+                                        <span className="text-gray-500 font-normal"> (optional)</span>
                                     </label>
                                     <textarea
-                                        rows={3}
-                                        className="w-full px-4 py-2 border border-yellow-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif"
-                                        placeholder="Any special requests or a message for the couple..."
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleInputChange}
+                                        rows={4}
+                                        maxLength={500}
+                                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif resize-none ${
+                                            formErrors.message ? 'border-red-300 bg-red-50' : 'border-yellow-300'
+                                        }`}
+                                        placeholder="Share any dietary restrictions, accessibility needs, or a special message for Kevin & Steffy..."
                                     />
+                                    <div className="flex justify-between items-center mt-1">
+                                        {formErrors.message && (
+                                            <p className="text-red-500 text-sm font-serif">{formErrors.message}</p>
+                                        )}
+                                        <p className="text-gray-400 text-sm font-serif ml-auto">
+                                            {formData.message.length}/500 characters
+                                        </p>
+                                    </div>
                                 </div>
 
-                                <button
-                                    type="submit"
-                                    className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white font-serif font-semibold py-3 rounded-lg transition-all duration-300"
-                                >
-                                    Submit RSVP
-                                </button>
+                                {submitMessage && (
+                                    <div className={`p-4 rounded-lg text-center font-serif border ${
+                                        submitMessage.includes('error') || submitMessage.includes('apologize') || submitMessage.includes('correct')
+                                            ? 'bg-red-50 text-red-700 border-red-200' 
+                                            : 'bg-green-50 text-green-700 border-green-200'
+                                    }`}>
+                                        {submitMessage}
+                                    </div>
+                                )}
+
+                                <div className="pt-2">
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white font-serif font-semibold py-4 rounded-lg text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] focus:ring-4 focus:ring-yellow-300 shadow-lg"
+                                    >
+                                        {isSubmitting ? (
+                                            <span className="flex items-center justify-center">
+                                                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                                Submitting Your RSVP...
+                                            </span>
+                                        ) : (
+                                            '💌 Submit RSVP'
+                                        )}
+                                    </button>
+                                </div>
+
+                                <p className="text-center text-sm text-gray-500 font-serif italic">
+                                    <span className="text-red-500">*</span> Required fields
+                                </p>
                             </form>
                         </div>
                     )}
