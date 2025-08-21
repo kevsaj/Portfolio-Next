@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+# Allow access to main portfolio
+Allow: /
+Allow: /_next/static/
+Allow: /favicon.ico
+
+# Block private wedding page from all crawlers
+User-agent: *
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: Googlebot
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: Bingbot
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: Slurp
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: DuckDuckBot
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: Baiduspider
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: YandexBot
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: facebookexternalhit
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: Twitterbot
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+User-agent: LinkedInBot
+Disallow: /wedding-celebration-2026-kevin-steffy-invitation
+
+Sitemap: https://kisstudios.net/sitemap.xml
