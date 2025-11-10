@@ -19,6 +19,7 @@ export default function WeddingInvitation() {
     const [formErrors, setFormErrors] = useState<{[key: string]: string}>({});
     const [lastSubmissionTime, setLastSubmissionTime] = useState<number>(0);
     const [submissionCount, setSubmissionCount] = useState<number>(0);
+    const [shouldShowAnimation, setShouldShowAnimation] = useState(true);
 
     useEffect(() => {
         setAnimateIn(true);
@@ -32,6 +33,27 @@ export default function WeddingInvitation() {
         if (submitCount) {
             setSubmissionCount(parseInt(submitCount));
         }
+
+        // Performance optimization: Disable animation on low-end devices or slow connections
+        const checkPerformance = () => {
+            // Check if device prefers reduced motion
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            // Check connection speed
+            const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+            const isSlowConnection = connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g');
+            
+            // Check if mobile device (animations can be heavy on mobile)
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isLowEndMobile = isMobile && window.innerWidth < 768;
+            
+            // Disable animation if any performance concerns
+            if (prefersReducedMotion || isSlowConnection || isLowEndMobile) {
+                setShouldShowAnimation(false);
+            }
+        };
+
+        checkPerformance();
     }, []);
 
     const validateForm = () => {
@@ -266,8 +288,8 @@ export default function WeddingInvitation() {
                 backgroundSize: 'cover',
                 backgroundBlendMode: 'lighten'
             }}>
-                {/* Falling Petals Background Component */}
-                <FallingPetalsBackground />
+                {/* Falling Petals Background Component - Only on capable devices */}
+                {shouldShowAnimation && <FallingPetalsBackground />}
                 {/* Watercolor Texture Overlay */}
                 <div className="absolute inset-0 opacity-20" style={{
                     background: 'radial-gradient(circle at 20% 30%, rgba(247, 198, 217, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(200, 162, 200, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(230, 184, 175, 0.25) 0%, transparent 50%)'
@@ -299,9 +321,10 @@ export default function WeddingInvitation() {
                                             alt="Kevin & Steffy" 
                                             fill
                                             className="object-cover rounded-full"
-                                            quality={100}
+                                            quality={85}
                                             priority
                                             sizes="(max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
+                                            loading="eager"
                                         />
                                     </div>
                                 </div>
@@ -378,13 +401,16 @@ export default function WeddingInvitation() {
 
                         {/* Parents' Invitation */}
                         <div className="text-center mb-8">
-                            <div className="text-base italic" style={{ 
+                            <div className="text-base" style={{ 
                                 fontFamily: 'Merriweather, serif',
                                 color: '#8b6914'
                             }}>
-                                <p className="mb-1">Mrs. Bency Shajan & Mr. Shajan Mookken</p>
-                                <p className="mb-1">cordially invite your esteemed presence with family on</p>
-                                <p className="font-semibold" style={{ color: '#a67c00' }}>the blessed occasion of the marriage of our son</p>
+                                <p className="mb-2 italic">Mrs. Bency Shajan & Mr. Shajan Mookken</p>
+                                <p className="mb-2 italic">cordially invite your esteemed presence with family on</p>
+                                <p className="mb-2 italic">the blessed occasion of the marriage of our son</p>
+                                <p className="text-sm mt-3" style={{ color: '#8b6914' }}>
+                                    Grandson of Late Mrs. Santha Mookken and Late Mr. Varunny Mookken, Ollur, Thrissur
+                                </p>
                             </div>
                         </div>
 
@@ -408,14 +434,14 @@ export default function WeddingInvitation() {
                             }}>
                                 Steffy Treesa Binoy
                             </h1>
-                            <div className="mt-4 text-base italic" style={{ 
+                            <div className="mt-4 text-base" style={{ 
                                 fontFamily: 'Merriweather, serif',
                                 color: '#8b6914'
                             }}>
-                                <p className="mb-1">Daughter of Mrs. Suma Binoy & Mr. Binoy Jose</p>
-                                <p className="mb-1">Granddaughter of Mrs. Annamma Joseph and Late K. T. Joseph</p>
-                                <p className="mb-1">Kochukarippaparambil House, Koovappally, Kanjirappally</p>
-                                <p className="mt-2 font-semibold" style={{ color: '#a67c00' }}>which will by the grace of God, be blessed</p>
+                                <p className="mb-2">Mrs. Suma Binoy & Mr. Binoy Jose</p>
+                                <p className="text-sm mb-3">Granddaughter of Mrs. Annamma Joseph and Late Mr. K. T. Joseph</p>
+                                <p className="text-sm mb-3">Kochukarippaparambil House, Koovappally, Kanjirappally</p>
+                                <p className="mt-3 italic" style={{ color: '#8b6914' }}>which will by the grace of God, be blessed</p>
                             </div>
                         </div>
 
@@ -427,10 +453,10 @@ export default function WeddingInvitation() {
                                 borderColor: '#d4af37'
                             }}>
                                 <div className="mb-4">
-                                    <h3 className="text-2xl font-bold mb-2 uppercase" style={{ 
+                                    <h3 className="text-2xl font-bold mb-2" style={{ 
                                         fontFamily: 'Cinzel Decorative, serif',
-                                        color: '#8b6914'
-                                    }}>BETROTHAL</h3>
+                                        color: '#c17a38'
+                                    }}>Betrothal</h3>
                                     {/* Ornamental Divider */}
                                     <div className="flex justify-center items-center space-x-2">
                                         <div className="w-8 h-px bg-gradient-to-r from-transparent to-yellow-600"></div>
@@ -439,11 +465,18 @@ export default function WeddingInvitation() {
                                     </div>
                                 </div>
                                 <div style={{ color: '#654321' }}>
-                                    <p className="text-xl mb-2" style={{ fontFamily: 'Lora, serif' }}>December 29th, 2025</p>
-                                    <p className="text-lg italic mb-3" style={{ fontFamily: 'Lora, serif' }}>5:00 PM</p>
-                                    <div className="text-base" style={{ fontFamily: 'Lora, serif' }}>
-                                        <p className="font-semibold">St. Mary's Church</p>
-                                        <p>Podimattom, Kanjirappally</p>
+                                    <p className="text-xl mb-2" style={{ fontFamily: 'Lora, serif', color: '#c17a38' }}>December 29th, 2025 - 5:30 PM</p>
+                                    <div className="text-base mt-4" style={{ fontFamily: 'Lora, serif' }}>
+                                        <p className="font-semibold mb-2">St. Mary's Church,</p>
+                                        <p className="mb-3">Podimattom, Kanjirappally</p>
+                                        <a 
+                                            href="https://maps.app.goo.gl/K7NmQKyQHpK554iD8" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="inline-block mt-2 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg transition-colors duration-300 text-sm"
+                                        >
+                                            📍 View on Google Maps
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -454,10 +487,10 @@ export default function WeddingInvitation() {
                                 borderColor: '#d4af37'
                             }}>
                                 <div className="mb-4">
-                                    <h3 className="text-2xl font-bold mb-2 uppercase" style={{ 
+                                    <h3 className="text-2xl font-bold mb-2" style={{ 
                                         fontFamily: 'Cinzel Decorative, serif',
-                                        color: '#8b6914'
-                                    }}>WEDDING</h3>
+                                        color: '#c17a38'
+                                    }}>Wedding</h3>
                                     {/* Ornamental Divider */}
                                     <div className="flex justify-center items-center space-x-2">
                                         <div className="w-8 h-px bg-gradient-to-r from-transparent to-yellow-600"></div>
@@ -466,11 +499,18 @@ export default function WeddingInvitation() {
                                     </div>
                                 </div>
                                 <div style={{ color: '#654321' }}>
-                                    <p className="text-xl mb-2" style={{ fontFamily: 'Lora, serif' }}>January 1st, 2026</p>
-                                    <p className="text-lg italic mb-3" style={{ fontFamily: 'Lora, serif' }}>11:00 AM</p>
-                                    <div className="text-base" style={{ fontFamily: 'Lora, serif' }}>
-                                        <p className="font-semibold">Mary Matha Church</p>
-                                        <p>Ollur, Thrissur</p>
+                                    <p className="text-xl mb-2" style={{ fontFamily: 'Lora, serif', color: '#c17a38' }}>January 1st, 2026 - 11 AM</p>
+                                    <div className="text-base mt-4" style={{ fontFamily: 'Lora, serif' }}>
+                                        <p className="font-semibold mb-2">Mary Matha Church,</p>
+                                        <p className="mb-3">Ollur, Thrissur</p>
+                                        <a 
+                                            href="https://maps.app.goo.gl/VJ45CDC831QwHLqKA" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="inline-block mt-2 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg transition-colors duration-300 text-sm"
+                                        >
+                                            📍 View on Google Maps
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -488,6 +528,12 @@ export default function WeddingInvitation() {
                             </div>
                             
                             <div className="mt-8">
+                                <p className="text-base italic mb-4" style={{ 
+                                    fontFamily: 'Merriweather, serif',
+                                    color: '#c17a38'
+                                }}>
+                                    And for reception thereafter at the Parish Hall
+                                </p>
                                 <p className="text-base italic" style={{ 
                                     fontFamily: 'Merriweather, serif',
                                     color: '#8b6914'
@@ -616,8 +662,8 @@ export default function WeddingInvitation() {
                                                     className="mr-3 mt-1 text-yellow-500 focus:ring-yellow-400" 
                                                 />
                                                 <div>
-                                                    <span className="text-gray-700 font-medium">💍 Betrothal Ceremony</span>
-                                                    <p className="text-sm text-gray-600 mt-1">December 29th, 2025 at 5:00 PM<br/>St. Mary's Church, Podimattom</p>
+                                                    <span className="text-gray-700 font-medium">💍 Betrothal</span>
+                                                    <p className="text-sm text-gray-600 mt-1">December 29th, 2025 - 5:30 PM<br/>St. Mary's Church, Podimattom, Kanjirappally</p>
                                                 </div>
                                             </label>
                                             <label className="flex items-start font-serif cursor-pointer hover:bg-yellow-100 p-3 rounded transition-colors">
@@ -630,8 +676,8 @@ export default function WeddingInvitation() {
                                                     className="mr-3 mt-1 text-yellow-500 focus:ring-yellow-400" 
                                                 />
                                                 <div>
-                                                    <span className="text-gray-700 font-medium">👰🤵 Wedding Ceremony</span>
-                                                    <p className="text-sm text-gray-600 mt-1">January 1st, 2026 at 11:00 AM<br/>Mary Matha Church, Ollur</p>
+                                                    <span className="text-gray-700 font-medium">👰🤵 Wedding</span>
+                                                    <p className="text-sm text-gray-600 mt-1">January 1st, 2026 - 11 AM<br/>Mary Matha Church, Ollur, Thrissur</p>
                                                 </div>
                                             </label>
                                         </div>
@@ -645,18 +691,26 @@ export default function WeddingInvitation() {
                                     <label className="block text-gray-700 text-sm font-serif font-medium mb-2">
                                         Number of guests (including yourself)
                                     </label>
-                                    <select 
-                                        name="guests"
-                                        value={formData.guests}
-                                        onChange={handleInputChange}
-                                        className="w-full px-4 py-3 border border-yellow-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif bg-white"
-                                    >
-                                        <option value="1">1 Guest</option>
-                                        <option value="2">2 Guests</option>
-                                        <option value="3">3 Guests</option>
-                                        <option value="4">4 Guests</option>
-                                        <option value="5">5+ Guests</option>
-                                    </select>
+                                    <div className="relative">
+                                        <select 
+                                            name="guests"
+                                            value={formData.guests}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-3 pr-10 border border-yellow-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent font-serif bg-white appearance-none cursor-pointer transition-all hover:border-yellow-400"
+                                            style={{
+                                                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d4af37'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                                                backgroundRepeat: 'no-repeat',
+                                                backgroundPosition: 'right 0.75rem center',
+                                                backgroundSize: '1.5em 1.5em'
+                                            }}
+                                        >
+                                            <option value="1">1 Guest</option>
+                                            <option value="2">2 Guests</option>
+                                            <option value="3">3 Guests</option>
+                                            <option value="4">4 Guests</option>
+                                            <option value="5">5+ Guests</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div>
