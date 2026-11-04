@@ -17,7 +17,6 @@ export default function SiteNav() {
             <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3" aria-label="Main">
                 <Link href="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
                     <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">KIS Studios</span>
-                    <span className="hidden sm:inline text-xs text-gray-500 dark:text-gray-400">by Kevin Sajan</span>
                 </Link>
 
                 <div className="hidden md:flex items-center gap-6">
