@@ -3,7 +3,7 @@ import SiteNav from '../components/SiteNav'
 import Footer from '../components/Footer'
 import Hero from '../components/home/Hero'
 import { services } from '../components/home/Services'
-import { CONTACT_EMAIL } from '../utils/site'
+import { BOOKING_URL, BUSINESS_PROFILES, CONTACT_EMAIL, PERSONAL_PROFILES } from '../utils/site'
 import Services from '../components/home/Services'
 import Problems from '../components/home/Problems'
 import Process from '../components/home/Process'
@@ -32,7 +32,15 @@ const jsonLd = {
         { '@type': 'Country', name: 'Canada' },
       ],
       founder: { '@id': `${SITE_URL}/about#kevin` },
-      sameAs: ['https://github.com/kevsaj', 'https://www.linkedin.com/in/kevin-sajan/'],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: CONTACT_EMAIL,
+        url: BOOKING_URL,
+        areaServed: 'CA',
+        availableLanguage: 'English',
+      },
+      sameAs: BUSINESS_PROFILES.length ? BUSINESS_PROFILES : PERSONAL_PROFILES,
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Web development services',
