@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Kevin Sajan portfolio",
+  "description": "KIS Studios: websites, apps, Shopify stores, games and data by Kevin Sajan",
   "private": true,
   "engines": {
     "node": ">=20.9.0",
@@ -38,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/kevsaj/Portfolio-Next/issues"
   },
-  "homepage": "https://github.com/kevsaj/Portfolio-Next#readme",
+  "homepage": "https://kisstudios.net",
   "devDependencies": {
     "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
