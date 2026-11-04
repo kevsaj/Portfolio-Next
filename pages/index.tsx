@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <SiteHead
-        title="KIS Studios | Websites, apps, Shopify, games & data by Kevin Sajan"
+        title="KIS Studios | Websites, apps, Shopify, games & data"
         description="Toronto developer Kevin Sajan builds websites, web and mobile apps, Shopify stores, games, APIs, databases, dashboards and reports, and helps fix your online presence. Book a free consult."
       />
       <SiteNav />
