@@ -1,31 +1,27 @@
-# Portfolio-Next
+# KIS Studios (kisstudios.net)
 
 #### Made with: <img alt="Next" src ="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"/> <img alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/> <img alt="SASS" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"/> <img alt="Tailwind" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
 
-## Table of Contents
+The website for **KIS Studios**, Kevin Sajan's freelance studio for websites, apps, Shopify stores, games, APIs, databases, reports and online presence work.
 
-This is my Portfolio displaying my coolest projects
-* [Installation](#installation)
-* [Usage](#Usage)
-* [Credits](#Credits)
-* [License](#License)
+Live at [kisstudios.net](https://kisstudios.net/).
 
-Page is live: [on Vercel](https://kisstudios.net/)
+## Pages
+* `/` : services, how it works, selected work and the contact form
+* `/about` : Kevin's background, experience, skills, education and resume download
 
-![Should Look like this lol](https://github.com/kevsaj/Portfolio-Next/blob/main/assets/KS.gif)
+## Development
+Requires Node.js 20.9 or newer (`.nvmrc` pins 22).
 
-# Installation
-* Learn Full-Stack Web Development magic!
-* Get Motivated
-* Create projects for Portfolio
-* Upload to Github 
+```bash
+npm ci
+npm run dev        # http://localhost:3000
+npm run build      # production build
+npm run lint       # ESLint (flat config)
+npm audit          # should report 0 vulnerabilities
+```
 
-# Usage
-* To practice with and display my technical skills 
-
-# Credits
-* The Universe - thanks
-* University of Toronto SCS Coding Bootcamp
+The contact form posts to Formspree and has client-side spam protection (see `CONTACT_VALIDATION.md`).
 
 # License
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/kevsaj/Portfolio-Next/blob/main/LICENSE)

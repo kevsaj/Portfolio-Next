@@ -7,7 +7,7 @@ function WorkExperience() {
     return (
         <>
             <div id="experience" className="flex flex-col justify-center items-center py-12">
-                <h1 className="mb-12 text-3xl font-bold">Work Experience</h1>
+                <h2 className="mb-12 text-3xl font-bold text-gray-900 dark:text-white">Work experience</h2>
                 
                 <div className="max-w-6xl mx-auto px-4">
                     {/* MacLean Engineering - Flip Card */}
@@ -44,12 +44,16 @@ function WorkExperience() {
                                             <h2 className="text-2xl font-bold text-gray-900">Software Developer</h2>
                                             <h3 className="text-xl font-semibold text-blue-600 mb-2">MacLean Engineering</h3>
                                         </div>
-                                        <div className="text-gray-600 font-medium">
-                                            July 2021 - Present
+                                        <div className="text-gray-600 font-medium md:pr-10">
+                                            July 2021 – Present
                                         </div>
                                     </div>
                                     
                                     <div className="space-y-3 text-gray-700">
+                                        <div className="flex items-start">
+                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
+                                            <p>Build <strong>machine HMIs</strong> (human-machine interfaces) that operators use to monitor and control heavy equipment</p>
+                                        </div>
                                         <div className="flex items-start">
                                             <span className="text-blue-500 mr-2 mt-1">▶</span>
                                             <p>Built <strong>3D point cloud visualization system</strong> using Python, Open3D, and matplotlib with automated reporting and statistical analysis</p>
@@ -126,8 +130,8 @@ function WorkExperience() {
                                             <h2 className="text-2xl font-bold text-gray-900">Financial Advisory & Tax Technician</h2>
                                             <h3 className="text-xl font-semibold text-green-600 mb-2">Deloitte</h3>
                                         </div>
-                                        <div className="text-gray-600 font-medium">
-                                            February 2019 - July 2021
+                                        <div className="text-gray-600 font-medium md:pr-10">
+                                            February 2019 – July 2021
                                         </div>
                                     </div>
                                     
@@ -158,15 +162,6 @@ function WorkExperience() {
                         </FlipCard>
                     </div>
 
-                    {/* Education Highlight */}
-                    <div className="bg-gradient-to-b from-pink-200 to-white rounded-3xl p-6 opacity-80">
-                        <h3 className="text-lg font-bold text-purple-800 mb-2">Currently Pursuing</h3>
-                        <p className="text-gray-700">
-                            <strong>Master of Data Science</strong> at University of Pittsburgh School of Computing and Information (2025-2027)
-                            <br />
-                            <span className="text-sm text-gray-600">Focus: Data Modeling/Warehousing and AI in Data Management</span>
-                        </p>
-                    </div>
                 </div>
             </div>
         </>
