@@ -3,6 +3,7 @@ import SiteNav from '../components/SiteNav'
 import Footer from '../components/Footer'
 import Hero from '../components/home/Hero'
 import { services } from '../components/home/Services'
+import { CONTACT_EMAIL } from '../utils/site'
 import Services from '../components/home/Services'
 import Problems from '../components/home/Problems'
 import Process from '../components/home/Process'
@@ -21,7 +22,7 @@ const jsonLd = {
       name: 'KIS Studios',
       url: `${SITE_URL}/`,
       image: `${SITE_URL}/og-image.png`,
-      email: 'kisstudios98@gmail.com',
+      email: CONTACT_EMAIL,
       description:
         'Freelance web developer in Toronto building websites, web and mobile apps, Shopify stores, games, APIs, databases, dashboards and SEO for small businesses.',
       address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressRegion: 'ON', addressCountry: 'CA' },

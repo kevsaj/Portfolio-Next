@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BOOKING_URL, CONTACT_EMAIL } from '../utils/site';
 import { 
     isValidEmail, 
     isDisposableEmail, 
@@ -224,7 +225,20 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <p className="font-medium text-gray-900 dark:text-white">Email</p>
-                                        <a href="mailto:kisstudios98@gmail.com" className="text-pink-600 dark:text-pink-400 hover:underline">kisstudios98@gmail.com</a>
+                                        <a href={`mailto:${CONTACT_EMAIL}`} className="text-pink-600 dark:text-pink-400 hover:underline">{CONTACT_EMAIL}</a>
+                                    </div>
+                                </div>
+
+                                {/* Booking */}
+                                <div className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                                        <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p className="font-medium text-gray-900 dark:text-white">Book a free 30-minute call</p>
+                                        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-pink-600 dark:text-pink-400 hover:underline">Pick a time on Cal.com</a>
                                     </div>
                                 </div>
 
