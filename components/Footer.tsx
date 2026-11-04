@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CONTACT_EMAIL } from '../utils/site';
+import { CONTACT_EMAIL, REVIEW_URL } from '../utils/site';
 
 export default function Footer() {
     return (
@@ -10,6 +10,9 @@ export default function Footer() {
                     <Link href="/#services" className="hover:text-pink-600">Services</Link>
                     <Link href="/about" className="hover:text-pink-600">About</Link>
                     <Link href="/#contact" className="hover:text-pink-600">Contact</Link>
+                    {REVIEW_URL && (
+                        <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">Review us on Google</a>
+                    )}
                     <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-pink-600">{CONTACT_EMAIL}</a>
                     <a href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">GitHub</a>
                     <a href="https://www.linkedin.com/in/kevin-sajan/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">LinkedIn</a>

@@ -7,6 +7,7 @@ import WorkExperience from '../components/WorkExperience'
 import Education from '../components/Education'
 import CtaBanner from '../components/CtaBanner'
 import ScrollAnimation from '../components/ScrollAnimation'
+import { PERSONAL_PROFILES } from '../utils/site'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -21,7 +22,7 @@ const jsonLd = {
     image: `${SITE_URL}/self.png`,
     worksFor: { '@id': `${SITE_URL}/#business` },
     homeLocation: { '@type': 'City', name: 'Toronto' },
-    sameAs: ['https://github.com/kevsaj', 'https://www.linkedin.com/in/kevin-sajan/'],
+    sameAs: PERSONAL_PROFILES,
   },
 }
 
