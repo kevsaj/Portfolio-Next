@@ -9,7 +9,7 @@ export default function Hero() {
             <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1.4fr_1fr]">
                 <div>
                     <p className="mb-4 inline-block rounded-full bg-pink-100 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-pink-700 dark:bg-pink-900/40 dark:text-pink-300">
-                        KIS Studios · Keep it simple · Toronto & remote
+                        KIS Studios · Web &amp; app developer · Toronto &amp; remote
                     </p>
                     <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white md:text-6xl">
                         Got an idea, or stuck online?{' '}
