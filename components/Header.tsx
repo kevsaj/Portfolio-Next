@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Header.module.scss';
 
-export default function Header(): JSX.Element {
+export default function Header(): React.JSX.Element {
     return <> {
         <div className="logo mx-auto" >
             <div className="logo w-full h-full mx-auto hover:bg-pink-300" >
