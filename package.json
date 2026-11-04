@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "@types/three": "^0.179.0",
+    "@vercel/analytics": "^2.0.1",
     "autoprefixer": "^10.6.2",
     "next": "^16.4.5",
     "postcss": "^8.5.32",
