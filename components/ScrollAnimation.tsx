@@ -16,35 +16,37 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
     className = ''
 }) => {
     const [isVisible, setIsVisible] = useState(false);
-    const [hasAnimated, setHasAnimated] = useState(false);
     const elementRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && !hasAnimated) {
-                    setTimeout(() => {
-                        setIsVisible(true);
-                        setHasAnimated(true);
-                    }, delay);
-                }
-            },
-            {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            }
-        );
+        const el = elementRef.current;
+        if (!el) return;
+        let timer: ReturnType<typeof setTimeout> | undefined;
 
-        if (elementRef.current) {
-            observer.observe(elementRef.current);
+        const reveal = () => { timer = setTimeout(() => setIsVisible(true), delay); };
+
+        if (typeof IntersectionObserver === 'undefined' ||
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            reveal();
+            return () => clearTimeout(timer);
         }
 
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries.some((e) => e.isIntersecting)) {
+                    observer.disconnect();
+                    reveal();
+                }
+            },
+            { threshold: 0, rootMargin: '0px 0px -10% 0px' }
+        );
+        observer.observe(el);
+
         return () => {
-            if (elementRef.current) {
-                observer.unobserve(elementRef.current);
-            }
+            observer.disconnect();
+            clearTimeout(timer);
         };
-    }, [delay, hasAnimated]);
+    }, [delay]);
 
     const getAnimationClasses = () => {
         const baseClasses = 'transition-all duration-700 ease-out';

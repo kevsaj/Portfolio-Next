@@ -8,7 +8,7 @@ interface DataPoint {
 
 const FinancialDataChart: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number | undefined>(undefined);
     const [isVisible, setIsVisible] = useState(false);
     const [isClient, setIsClient] = useState(false);
     const [stats] = useState({

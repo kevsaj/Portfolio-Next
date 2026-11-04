@@ -3,10 +3,10 @@ import * as THREE from 'three';
 
 const CompactPointCloudDemo: React.FC = () => {
     const mountRef = useRef<HTMLDivElement>(null);
-    const sceneRef = useRef<THREE.Scene>();
-    const rendererRef = useRef<THREE.WebGLRenderer>();
-    const pointCloudRef = useRef<THREE.Points>();
-    const frameRef = useRef<number>();
+    const sceneRef = useRef<THREE.Scene | undefined>(undefined);
+    const rendererRef = useRef<THREE.WebGLRenderer | undefined>(undefined);
+    const pointCloudRef = useRef<THREE.Points | undefined>(undefined);
+    const frameRef = useRef<number | undefined>(undefined);
     
     const [isClient, setIsClient] = useState(false);
     const [isVisible, setIsVisible] = useState(false);

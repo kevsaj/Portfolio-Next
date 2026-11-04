@@ -4,14 +4,14 @@
   "description": "Kevin Sajan portfolio",
   "private": true,
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=20.9.0",
     "npm": ">=8.0.0"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "type-check": "tsc --noEmit"
   },
   "repository": {
@@ -23,18 +23,14 @@
     "resume"
   ],
   "dependencies": {
-    "@formspree/react": "^2.5.1",
     "@types/three": "^0.179.0",
-    "autoprefixer": "^10.4.16",
-    "axios": "^1.6.2",
-    "firebase": "^12.1.0",
-    "next": "^14.0.4",
-    "postcss": "^8.4.32",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-firebase-hooks": "^5.1.1",
-    "sass": "^1.69.5",
-    "tailwindcss": "^3.3.6",
+    "autoprefixer": "^10.6.2",
+    "next": "^16.4.5",
+    "postcss": "^8.5.32",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sass": "^1.107.1",
+    "tailwindcss": "^3.4.19",
     "three": "^0.179.1"
   },
   "author": "kevsaj",
@@ -44,11 +40,16 @@
   },
   "homepage": "https://github.com/kevsaj/Portfolio-Next#readme",
   "devDependencies": {
-    "@types/node": "^20.10.5",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "eslint": "^9.33.0",
-    "eslint-config-next": "^15.4.7",
-    "typescript": "^5.3.3"
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.5",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.4"
+    }
   }
 }

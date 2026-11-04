@@ -5,8 +5,10 @@ function Projects() {
 
     return (
         <>
-        <div id="projects" className="flex flex-col justify-center items-center">
-            <h1 className="mb-10 text-3xl font-bold">Projects</h1>
+        <div id="work" className="flex flex-col justify-center items-center scroll-mt-24">
+            <p className="text-sm font-semibold uppercase tracking-widest text-pink-600 dark:text-pink-400">Selected work</p>
+            <h2 className="mt-2 mb-4 text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">Things I&apos;ve built</h2>
+            <p className="mb-6 max-w-2xl px-4 text-center text-gray-600 dark:text-gray-300">A few personal and open-source projects: full-stack apps, PWAs, a small game and automation tools. The code is on GitHub.</p>
             <div className="pt-4 mx-auto flex flex-row flex-wrap gap-7 gap-y-14 justify-center items-center p-5 pb-20">
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
                         <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
@@ -18,7 +20,7 @@ function Projects() {
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
                             unoptimized
                         />
-                        <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://dev-web3.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
                         <h1 className="font-extrabold text-lg">Dev Web</h1>
@@ -63,13 +65,13 @@ function Projects() {
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
                             unoptimized
                         />
-                        <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://spacebookx.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
                         <h1 className="font-extrabold text-lg">SpaceBook</h1>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Our own social media platform employing REST APIs to provide News, Gifs, Weather info whilst connecting with friends. Available on the <a href="https://play.google.com/store/apps/details?id=localhost_8080.twa" target="_blank" rel="noopener noreferrer" className='hover:text-blue-500 hover:uppercase hover:underline'>Google Store</a></h2>
+                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Our own social media platform employing REST APIs to provide News, Gifs, Weather info whilst connecting with friends.</h2>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -108,7 +110,7 @@ function Projects() {
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
                             unoptimized
                         />
-                        <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://nagck.github.io/perfectpairings/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">PerfectPairings</h1>
@@ -153,7 +155,7 @@ function Projects() {
                                 height={160}
                                 className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
                             />
-                            <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://google-bookssearch.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                            <span aria-hidden="true" className='invisible ml-3 w-12' />
                         </div>
                         <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">Google Books Searcher</h1>
@@ -198,7 +200,7 @@ function Projects() {
                                 className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
                                 unoptimized
                             />
-                            <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://gentle-earth-07565.herokuapp.com/?id=6039d718f690370015b90ac5" target="_blank" rel="noopener noreferrer">Live</a></button>
+                            <span aria-hidden="true" className='invisible ml-3 w-12' />
                         </div>
                         <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">Workout-Tracker</h1>
@@ -243,7 +245,7 @@ function Projects() {
                                 className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
                                 unoptimized
                             />
-                            <button className='h-8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://immense-castle-02383.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a></button>
+                            <span aria-hidden="true" className='invisible ml-3 w-12' />
                         </div>
                         <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">Budget Tracker</h1>
@@ -288,7 +290,7 @@ function Projects() {
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
                             unoptimized
                         />
-                        <button className='h8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Fun-with-Angular" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
                         <h1 className="font-extrabold text-lg">Tic-Tac-Toe</h1>
@@ -327,7 +329,7 @@ function Projects() {
                                 <path d="m-2.3125e-8 8.9337 49.854 0.1586 14.167 24.47 14.432-24.47 49.547-0.1577-63.834 110.14zm126.98 0.6374-24.36 0.0207-38.476 66.052-38.453-66.052-24.749-0.0194 63.211 107.89zm-25.149-0.008-22.745 0.16758l-15.053 24.647-14.817-24.647-22.794-0.1679 37.731 64.476zM25.997 9.3929l23.002 0.0087M25.997 9.3929l23.002 0.0087" fill="none"></path><path d="m25.997 9.3929 23.002 0.0087l15.036 24.958 14.983-24.956 22.982-0.0057-37.85 65.655z" fill="#35495e"></path><path d="m0.91068 9.5686 25.066-0.1711 38.151 65.658 37.852-65.654 25.11 0.0263-62.966 108.06z" fill="#41b883"></path>
                             </svg>
                         </div>
-                            <button className='items-center ml-3 h-8 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer">Live</a></button>
+                            <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
                         <h1 className="font-extrabold text-lg">Vue-Chat</h1>
@@ -367,7 +369,7 @@ function Projects() {
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
                             unoptimized
                         />
-                        <button className='h8 bottom-1 items-center ml-3 border border-red-400 hover:bg-red-500 hover:text-white rounded outline-none focus:outline-none bg-transparent text-red-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/HappyBirthdayWisher" target="_blank" rel="noopener noreferrer">Live</a></button>
+                        <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
                             <h1 className="font-extrabold text-lg">HappyBirthdayWisher</h1>
