@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { BOOKING_URL } from '../../utils/site';
 
 const chips = ['Websites', 'Web & mobile apps', 'Shopify stores', 'Games', 'APIs', 'Databases', 'Dashboards & reports', 'Branding', 'Marketing'];
 
@@ -21,9 +22,9 @@ export default function Hero() {
                         One person, start to finish, in plain English.
                     </p>
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                        <Link href="/#contact" className="rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-7 py-3 text-center font-semibold text-white shadow-lg transition hover:scale-105 hover:from-pink-600 hover:to-purple-700">
+                        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-7 py-3 text-center font-semibold text-white shadow-lg transition hover:scale-105 hover:from-pink-600 hover:to-purple-700">
                             Book a free consult
-                        </Link>
+                        </a>
                         <Link href="/#services" className="rounded-full border border-gray-300 bg-white/60 px-7 py-3 text-center font-semibold text-gray-800 transition hover:bg-white dark:border-gray-600 dark:bg-gray-800/60 dark:text-gray-100 dark:hover:bg-gray-800">
                             See what I can build
                         </Link>
