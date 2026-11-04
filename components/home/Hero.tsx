@@ -34,7 +34,7 @@ export default function Hero() {
                         ))}
                     </ul>
                 </div>
-                <div className="relative mx-auto w-64 md:w-full md:max-w-sm">
+                <div className="relative mx-auto w-52 md:w-full md:max-w-[17rem]">
                     <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-pink-300 via-purple-300 to-yellow-200 opacity-60 blur-2xl dark:from-pink-700 dark:via-purple-800 dark:to-indigo-800" aria-hidden="true" />
                     <div className="relative overflow-hidden rounded-[2rem] border-4 border-white/80 shadow-2xl dark:border-gray-700">
                         <Image src="/self.png" alt="Kevin Sajan" width={480} height={480} className="h-auto w-full object-cover" priority />
