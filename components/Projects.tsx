@@ -12,9 +12,9 @@ function Projects() {
             <div className="pt-4 mx-auto flex flex-row flex-wrap gap-7 gap-y-14 justify-center items-center p-5 pb-20">
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
                         <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
-                        <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Dev-Web" target="_blank" rel="noopener noreferrer">Github</a></button>                        <Image
-                            src="/assets/DevWeb.gif"
-                            alt="DevWeb"
+                        <a href="https://github.com/kevsaj/Dev-Web" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>                        <Image
+                            src="/assets/DevWeb.webp"
+                            alt="Dev Web developer news and jobs portal demo"
                             width={160}
                             height={160}
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
@@ -23,10 +23,10 @@ function Projects() {
                         <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
-                        <h1 className="font-extrabold text-lg">Dev Web</h1>
+                        <h3 className="font-extrabold text-lg">Dev Web</h3>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">A useful portal for developers to find news, job postings, industry podcasts and relevant information all in one spot.</h2>
+                            <p className="md:px-8 mx-2 md:mx-1 text-md">A useful portal for developers to find news, job postings, industry podcasts and relevant information all in one spot.</p>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -36,7 +36,7 @@ function Projects() {
                         </div>
                         <div className="h-10 w-10">
                             <svg viewBox="0 0 128 128">
-                                <title>Artboard 16</title><g id="original"><path d="M126.67,98.44c-4.56,1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89,76,81.85,85.2,75.14,94.77c-2.4,3.42-4.92,4.91-9.4,3.7L92.66,62.34,67.6,29.71c4.31-.84,7.29-.41,9.93,3.45,5.83,8.52,12.26,16.63,18.67,25.21C102.65,49.82,109,41.7,115,33.26c2.41-3.42,5-4.72,9.33-3.46-3.28,4.35-6.49,8.63-9.72,12.88-4.36,5.73-8.64,11.53-13.16,17.14-1.61,2-1.35,3.3.09,5.19C109.9,76,118.16,87.1,126.67,98.44Z"></path><path d="M1.33,61.74c.72-3.61,1.2-7.29,2.2-10.83,6-21.43,30.6-30.34,47.5-17.06C60.93,41.64,63.39,52.62,62.9,65H7.1c-.84,22.21,15.15,35.62,35.53,28.78,7.15-2.4,11.36-8,13.47-15,1.07-3.51,2.84-4.06,6.14-3.06-1.69,8.76-5.52,16.08-13.52,20.66-12,6.86-29.13,4.64-38.14-4.89C5.26,85.89,3,78.92,2,71.39c-.15-1.2-.46-2.38-.7-3.57Q1.33,64.78,1.33,61.74ZM7.2,60.25H57.63c-.33-16.06-10.33-27.47-24-27.57C18.63,32.56,7.85,43.7,7.2,60.25Z"></path></g>
+                                <g id="original"><path d="M126.67,98.44c-4.56,1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89,76,81.85,85.2,75.14,94.77c-2.4,3.42-4.92,4.91-9.4,3.7L92.66,62.34,67.6,29.71c4.31-.84,7.29-.41,9.93,3.45,5.83,8.52,12.26,16.63,18.67,25.21C102.65,49.82,109,41.7,115,33.26c2.41-3.42,5-4.72,9.33-3.46-3.28,4.35-6.49,8.63-9.72,12.88-4.36,5.73-8.64,11.53-13.16,17.14-1.61,2-1.35,3.3.09,5.19C109.9,76,118.16,87.1,126.67,98.44Z"></path><path d="M1.33,61.74c.72-3.61,1.2-7.29,2.2-10.83,6-21.43,30.6-30.34,47.5-17.06C60.93,41.64,63.39,52.62,62.9,65H7.1c-.84,22.21,15.15,35.62,35.53,28.78,7.15-2.4,11.36-8,13.47-15,1.07-3.51,2.84-4.06,6.14-3.06-1.69,8.76-5.52,16.08-13.52,20.66-12,6.86-29.13,4.64-38.14-4.89C5.26,85.89,3,78.92,2,71.39c-.15-1.2-.46-2.38-.7-3.57Q1.33,64.78,1.33,61.74ZM7.2,60.25H57.63c-.33-16.06-10.33-27.47-24-27.57C18.63,32.56,7.85,43.7,7.2,60.25Z"></path></g>
                             </svg>
                         </div>
                         <div className="h-10 w-10">
@@ -57,9 +57,9 @@ function Projects() {
                     </div>
                 </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                        <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Spacebook" target="_blank" rel="noopener noreferrer">Github</a></button>                        <Image
-                            src="/assets/SpaceBook.gif"
-                            alt="Spacebook"
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                        <a href="https://github.com/kevsaj/Spacebook" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>                        <Image
+                            src="/assets/SpaceBook.webp"
+                            alt="SpaceBook social media app demo"
                             width={160}
                             height={160}
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
@@ -68,10 +68,10 @@ function Projects() {
                         <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
-                        <h1 className="font-extrabold text-lg">SpaceBook</h1>
+                        <h3 className="font-extrabold text-lg">SpaceBook</h3>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Our own social media platform employing REST APIs to provide News, Gifs, Weather info whilst connecting with friends.</h2>
+                            <p className="md:px-8 mx-2 md:mx-1 text-md">Our own social media platform employing REST APIs to provide News, Gifs, Weather info whilst connecting with friends.</p>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -86,7 +86,7 @@ function Projects() {
                         </div>
                         <div className="h-10 w-10">
                             <svg viewBox="0 0 128 128">
-                                <title>Artboard 7</title><g id="original"><path id="Path-2" d="M14.59,62.67a7.14,7.14,0,0,0,2.31-3.48c.46-2,.36-3.94-2.31-5.3C7.82,50.47,3.45,56.57,2.77,58s-1.74,3.68-1,8.84,3.19,9.9,11,11.73A32.89,32.89,0,0,0,34.77,76c6.84-3.26,19.7-9,22.94-9.58a28.15,28.15,0,0,1,6.49-.81V57.76a18,18,0,0,0-17.38-9.15C34.43,49.59,29.51,56,26.49,58.7s-8.61,9.17-12.37,8S9.31,61,10.64,59.56s2.37-1.18,3.18,0A6.24,6.24,0,0,1,14.59,62.67Z"></path><path id="Path-2-Copy" d="M113.41,62.67a7.14,7.14,0,0,1-2.31-3.48c-.46-2-.36-3.94,2.31-5.3,6.76-3.43,11.13,2.67,11.81,4.11s1.74,3.68,1,8.84-3.19,9.9-11,11.73A32.89,32.89,0,0,1,93.23,76c-6.84-3.26-19.7-9-22.94-9.58a28.15,28.15,0,0,0-6.49-.81V57.76a18,18,0,0,1,17.38-9.15c12.39,1,17.32,7.38,20.34,10.08s8.61,9.17,12.37,8,4.81-5.76,3.48-7.19-2.37-1.18-3.18,0A6.24,6.24,0,0,0,113.41,62.67Z"></path></g>
+                                <g id="original"><path id="Path-2" d="M14.59,62.67a7.14,7.14,0,0,0,2.31-3.48c.46-2,.36-3.94-2.31-5.3C7.82,50.47,3.45,56.57,2.77,58s-1.74,3.68-1,8.84,3.19,9.9,11,11.73A32.89,32.89,0,0,0,34.77,76c6.84-3.26,19.7-9,22.94-9.58a28.15,28.15,0,0,1,6.49-.81V57.76a18,18,0,0,0-17.38-9.15C34.43,49.59,29.51,56,26.49,58.7s-8.61,9.17-12.37,8S9.31,61,10.64,59.56s2.37-1.18,3.18,0A6.24,6.24,0,0,1,14.59,62.67Z"></path><path id="Path-2-Copy" d="M113.41,62.67a7.14,7.14,0,0,1-2.31-3.48c-.46-2-.36-3.94,2.31-5.3,6.76-3.43,11.13,2.67,11.81,4.11s1.74,3.68,1,8.84-3.19,9.9-11,11.73A32.89,32.89,0,0,1,93.23,76c-6.84-3.26-19.7-9-22.94-9.58a28.15,28.15,0,0,0-6.49-.81V57.76a18,18,0,0,1,17.38-9.15c12.39,1,17.32,7.38,20.34,10.08s8.61,9.17,12.37,8,4.81-5.76,3.48-7.19-2.37-1.18-3.18,0A6.24,6.24,0,0,0,113.41,62.67Z"></path></g>
                             </svg>
                         </div>
                         <div className="h-10 w-10">
@@ -102,9 +102,9 @@ function Projects() {
                     </div>
                 </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                        <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/nagck/perfectpairings" target="_blank" rel="noopener noreferrer">Github</a></button>                        <Image
-                            src="/assets/PerfectPairings.gif"
-                            alt="PerfectPairings"
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                        <a href="https://github.com/nagck/perfectpairings" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>                        <Image
+                            src="/assets/PerfectPairings.webp"
+                            alt="PerfectPairings food and drink pairing app demo"
                             width={160}
                             height={160}
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
@@ -113,10 +113,10 @@ function Projects() {
                         <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
-                            <h1 className="font-extrabold text-lg">PerfectPairings</h1>
+                            <h3 className="font-extrabold text-lg">PerfectPairings</h3>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                        <h2 className="md:px-8 mx-2 md:mx-1 text-md">PerfectPairings will provide you with delicious food options and pair your selection with the perfect drink. Still not convinced? A GIF will Convince!</h2>
+                        <p className="md:px-8 mx-2 md:mx-1 text-md">PerfectPairings will provide you with delicious food options and pair your selection with the perfect drink. Still not convinced? A GIF will Convince!</p>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -147,10 +147,10 @@ function Projects() {
                     </div>
                 </div>
                     <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                            <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Google-Books-Search" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                            <a href="https://github.com/kevsaj/Google-Books-Search" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>
                             <Image
                                 src="/assets/gbs.png"
-                                alt="Application"
+                                alt="Google Books Searcher app screenshot"
                                 width={160}
                                 height={160}
                                 className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
@@ -158,10 +158,10 @@ function Projects() {
                             <span aria-hidden="true" className='invisible ml-3 w-12' />
                         </div>
                         <div className="m-2 justify-center mx-auto">
-                            <h1 className="font-extrabold text-lg">Google Books Searcher</h1>
+                            <h3 className="font-extrabold text-lg">Google Books Searcher</h3>
                         </div>
                         <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Search Google for your favorite books without any ads or distractions inside a clean design!</h2>
+                            <p className="md:px-8 mx-2 md:mx-1 text-md">Search Google for your favorite books without any ads or distractions inside a clean design!</p>
                         </div>
                         <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                             <div className="h-10 w-10">
@@ -176,7 +176,7 @@ function Projects() {
                             </div>
                             <div className="h-10 w-10">
                                 <svg viewBox="0 0 128 128">
-                                    <title>Artboard 16</title><g id="original"><path d="M126.67,98.44c-4.56,1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89,76,81.85,85.2,75.14,94.77c-2.4,3.42-4.92,4.91-9.4,3.7L92.66,62.34,67.6,29.71c4.31-.84,7.29-.41,9.93,3.45,5.83,8.52,12.26,16.63,18.67,25.21C102.65,49.82,109,41.7,115,33.26c2.41-3.42,5-4.72,9.33-3.46-3.28,4.35-6.49,8.63-9.72,12.88-4.36,5.73-8.64,11.53-13.16,17.14-1.61,2-1.35,3.3.09,5.19C109.9,76,118.16,87.1,126.67,98.44Z"></path><path d="M1.33,61.74c.72-3.61,1.2-7.29,2.2-10.83,6-21.43,30.6-30.34,47.5-17.06C60.93,41.64,63.39,52.62,62.9,65H7.1c-.84,22.21,15.15,35.62,35.53,28.78,7.15-2.4,11.36-8,13.47-15,1.07-3.51,2.84-4.06,6.14-3.06-1.69,8.76-5.52,16.08-13.52,20.66-12,6.86-29.13,4.64-38.14-4.89C5.26,85.89,3,78.92,2,71.39c-.15-1.2-.46-2.38-.7-3.57Q1.33,64.78,1.33,61.74ZM7.2,60.25H57.63c-.33-16.06-10.33-27.47-24-27.57C18.63,32.56,7.85,43.7,7.2,60.25Z"></path></g>
+                                    <g id="original"><path d="M126.67,98.44c-4.56,1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89,76,81.85,85.2,75.14,94.77c-2.4,3.42-4.92,4.91-9.4,3.7L92.66,62.34,67.6,29.71c4.31-.84,7.29-.41,9.93,3.45,5.83,8.52,12.26,16.63,18.67,25.21C102.65,49.82,109,41.7,115,33.26c2.41-3.42,5-4.72,9.33-3.46-3.28,4.35-6.49,8.63-9.72,12.88-4.36,5.73-8.64,11.53-13.16,17.14-1.61,2-1.35,3.3.09,5.19C109.9,76,118.16,87.1,126.67,98.44Z"></path><path d="M1.33,61.74c.72-3.61,1.2-7.29,2.2-10.83,6-21.43,30.6-30.34,47.5-17.06C60.93,41.64,63.39,52.62,62.9,65H7.1c-.84,22.21,15.15,35.62,35.53,28.78,7.15-2.4,11.36-8,13.47-15,1.07-3.51,2.84-4.06,6.14-3.06-1.69,8.76-5.52,16.08-13.52,20.66-12,6.86-29.13,4.64-38.14-4.89C5.26,85.89,3,78.92,2,71.39c-.15-1.2-.46-2.38-.7-3.57Q1.33,64.78,1.33,61.74ZM7.2,60.25H57.63c-.33-16.06-10.33-27.47-24-27.57C18.63,32.56,7.85,43.7,7.2,60.25Z"></path></g>
                                 </svg>
                             </div>
                             <div className="h-10 w-10">
@@ -192,9 +192,9 @@ function Projects() {
                         </div>
                     </div>
                     <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                        <div className="mt-4 justify-center items-end space-between mx-auto flex flex-row">                            <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Workout-Tracker" target="_blank" rel="noopener noreferrer">Github</a></button>                            <Image
-                                src="/assets/WT.gif"
-                                alt="Workout Tracker"
+                        <div className="mt-4 justify-center items-end space-between mx-auto flex flex-row">                            <a href="https://github.com/kevsaj/Workout-Tracker" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>                            <Image
+                                src="/assets/WT.webp"
+                                alt="Workout Tracker app demo"
                                 width={160}
                                 height={160}
                                 className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
@@ -203,10 +203,10 @@ function Projects() {
                             <span aria-hidden="true" className='invisible ml-3 w-12' />
                         </div>
                         <div className="m-2 justify-center mx-auto">
-                            <h1 className="font-extrabold text-lg">Workout-Tracker</h1>
+                            <h3 className="font-extrabold text-lg">Workout-Tracker</h3>
                         </div>
                         <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Workout Tracker app using Mongo database with a Mongoose schema and handle routes with Express</h2>
+                            <p className="md:px-8 mx-2 md:mx-1 text-md">Workout Tracker app using Mongo database with a Mongoose schema and handle routes with Express</p>
                         </div>
                         <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                             <div className="h-10 w-10">
@@ -216,7 +216,7 @@ function Projects() {
                             </div>
                             <div className="h-10 w-10">
                                 <svg viewBox="0 0 128 128">
-                                    <title>Artboard 16</title><g id="original"><path d="M126.67,98.44c-4.56,1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89,76,81.85,85.2,75.14,94.77c-2.4,3.42-4.92,4.91-9.4,3.7L92.66,62.34,67.6,29.71c4.31-.84,7.29-.41,9.93,3.45,5.83,8.52,12.26,16.63,18.67,25.21C102.65,49.82,109,41.7,115,33.26c2.41-3.42,5-4.72,9.33-3.46-3.28,4.35-6.49,8.63-9.72,12.88-4.36,5.73-8.64,11.53-13.16,17.14-1.61,2-1.35,3.3.09,5.19C109.9,76,118.16,87.1,126.67,98.44Z"></path><path d="M1.33,61.74c.72-3.61,1.2-7.29,2.2-10.83,6-21.43,30.6-30.34,47.5-17.06C60.93,41.64,63.39,52.62,62.9,65H7.1c-.84,22.21,15.15,35.62,35.53,28.78,7.15-2.4,11.36-8,13.47-15,1.07-3.51,2.84-4.06,6.14-3.06-1.69,8.76-5.52,16.08-13.52,20.66-12,6.86-29.13,4.64-38.14-4.89C5.26,85.89,3,78.92,2,71.39c-.15-1.2-.46-2.38-.7-3.57Q1.33,64.78,1.33,61.74ZM7.2,60.25H57.63c-.33-16.06-10.33-27.47-24-27.57C18.63,32.56,7.85,43.7,7.2,60.25Z"></path></g>
+                                    <g id="original"><path d="M126.67,98.44c-4.56,1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89,76,81.85,85.2,75.14,94.77c-2.4,3.42-4.92,4.91-9.4,3.7L92.66,62.34,67.6,29.71c4.31-.84,7.29-.41,9.93,3.45,5.83,8.52,12.26,16.63,18.67,25.21C102.65,49.82,109,41.7,115,33.26c2.41-3.42,5-4.72,9.33-3.46-3.28,4.35-6.49,8.63-9.72,12.88-4.36,5.73-8.64,11.53-13.16,17.14-1.61,2-1.35,3.3.09,5.19C109.9,76,118.16,87.1,126.67,98.44Z"></path><path d="M1.33,61.74c.72-3.61,1.2-7.29,2.2-10.83,6-21.43,30.6-30.34,47.5-17.06C60.93,41.64,63.39,52.62,62.9,65H7.1c-.84,22.21,15.15,35.62,35.53,28.78,7.15-2.4,11.36-8,13.47-15,1.07-3.51,2.84-4.06,6.14-3.06-1.69,8.76-5.52,16.08-13.52,20.66-12,6.86-29.13,4.64-38.14-4.89C5.26,85.89,3,78.92,2,71.39c-.15-1.2-.46-2.38-.7-3.57Q1.33,64.78,1.33,61.74ZM7.2,60.25H57.63c-.33-16.06-10.33-27.47-24-27.57C18.63,32.56,7.85,43.7,7.2,60.25Z"></path></g>
                                 </svg>
                             </div>
                             <div className="h-10 w-10">
@@ -237,9 +237,9 @@ function Projects() {
                         </div>
                     </div>
                     <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                            <button className='h-8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Budget-Tracker" target="_blank" rel="noopener noreferrer">Github</a></button>                            <Image
-                                src="/assets/BT.gif"
-                                alt="Budget Tracker"
+                        <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                            <a href="https://github.com/kevsaj/Budget-Tracker" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>                            <Image
+                                src="/assets/BT.webp"
+                                alt="Budget Tracker progressive web app demo"
                                 width={160}
                                 height={160}
                                 className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
@@ -248,10 +248,10 @@ function Projects() {
                             <span aria-hidden="true" className='invisible ml-3 w-12' />
                         </div>
                         <div className="m-2 justify-center mx-auto">
-                            <h1 className="font-extrabold text-lg">Budget Tracker</h1>
+                            <h3 className="font-extrabold text-lg">Budget Tracker</h3>
                         </div>
                         <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Budget Tracker and Calculator - PWA app using Mongo, Mongoose, Express, Morgan for offline use</h2>
+                            <p className="md:px-8 mx-2 md:mx-1 text-md">Budget Tracker and Calculator - PWA app using Mongo, Mongoose, Express, Morgan for offline use</p>
                         </div>
                         <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                             <div className="h-10 w-10">
@@ -261,7 +261,7 @@ function Projects() {
                             </div>
                             <div className="h-10 w-10">
                                 <svg viewBox="0 0 128 128">
-                                    <title>Artboard 16</title><g id="original"><path d="M126.67,98.44c-4.56,1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89,76,81.85,85.2,75.14,94.77c-2.4,3.42-4.92,4.91-9.4,3.7L92.66,62.34,67.6,29.71c4.31-.84,7.29-.41,9.93,3.45,5.83,8.52,12.26,16.63,18.67,25.21C102.65,49.82,109,41.7,115,33.26c2.41-3.42,5-4.72,9.33-3.46-3.28,4.35-6.49,8.63-9.72,12.88-4.36,5.73-8.64,11.53-13.16,17.14-1.61,2-1.35,3.3.09,5.19C109.9,76,118.16,87.1,126.67,98.44Z"></path><path d="M1.33,61.74c.72-3.61,1.2-7.29,2.2-10.83,6-21.43,30.6-30.34,47.5-17.06C60.93,41.64,63.39,52.62,62.9,65H7.1c-.84,22.21,15.15,35.62,35.53,28.78,7.15-2.4,11.36-8,13.47-15,1.07-3.51,2.84-4.06,6.14-3.06-1.69,8.76-5.52,16.08-13.52,20.66-12,6.86-29.13,4.64-38.14-4.89C5.26,85.89,3,78.92,2,71.39c-.15-1.2-.46-2.38-.7-3.57Q1.33,64.78,1.33,61.74ZM7.2,60.25H57.63c-.33-16.06-10.33-27.47-24-27.57C18.63,32.56,7.85,43.7,7.2,60.25Z"></path></g>
+                                    <g id="original"><path d="M126.67,98.44c-4.56,1.16-7.38.05-9.91-3.75-5.68-8.51-11.95-16.63-18-24.9-.78-1.07-1.59-2.12-2.6-3.45C89,76,81.85,85.2,75.14,94.77c-2.4,3.42-4.92,4.91-9.4,3.7L92.66,62.34,67.6,29.71c4.31-.84,7.29-.41,9.93,3.45,5.83,8.52,12.26,16.63,18.67,25.21C102.65,49.82,109,41.7,115,33.26c2.41-3.42,5-4.72,9.33-3.46-3.28,4.35-6.49,8.63-9.72,12.88-4.36,5.73-8.64,11.53-13.16,17.14-1.61,2-1.35,3.3.09,5.19C109.9,76,118.16,87.1,126.67,98.44Z"></path><path d="M1.33,61.74c.72-3.61,1.2-7.29,2.2-10.83,6-21.43,30.6-30.34,47.5-17.06C60.93,41.64,63.39,52.62,62.9,65H7.1c-.84,22.21,15.15,35.62,35.53,28.78,7.15-2.4,11.36-8,13.47-15,1.07-3.51,2.84-4.06,6.14-3.06-1.69,8.76-5.52,16.08-13.52,20.66-12,6.86-29.13,4.64-38.14-4.89C5.26,85.89,3,78.92,2,71.39c-.15-1.2-.46-2.38-.7-3.57Q1.33,64.78,1.33,61.74ZM7.2,60.25H57.63c-.33-16.06-10.33-27.47-24-27.57C18.63,32.56,7.85,43.7,7.2,60.25Z"></path></g>
                                 </svg>
                             </div>
                             <div className="h-10 w-10">
@@ -282,9 +282,9 @@ function Projects() {
                         </div>
                     </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                    <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                        <button className='h8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/Fun-with-Angular" target="_blank" rel="noopener noreferrer">Github</a></button>                        <Image
-                            src="/assets/Angular.gif"
-                            alt="Angular app"
+                    <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                        <a href="https://github.com/kevsaj/Fun-with-Angular" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>                        <Image
+                            src="/assets/Angular.webp"
+                            alt="Tic-Tac-Toe Angular game demo"
                             width={160}
                             height={160}
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
@@ -293,10 +293,10 @@ function Projects() {
                         <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
-                        <h1 className="font-extrabold text-lg">Tic-Tac-Toe</h1>
+                        <h3 className="font-extrabold text-lg">Tic-Tac-Toe</h3>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                        <h2 className="md:px-8 mx-2 md:mx-1 text-md">Tic-Tac-Toe game to learn Angular and PWA potential hosted on Firebase</h2>
+                        <p className="md:px-8 mx-2 md:mx-1 text-md">Tic-Tac-Toe game to learn Angular and PWA potential hosted on Firebase</p>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -323,7 +323,7 @@ function Projects() {
                 </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
                     <div className="mt-4 justify-center flex flex-row items-end space-between mx-auto">
-                        <button className='items-center mr-3 h-8 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer">Github</a></button>
+                        <a href="https://github.com/kevsaj" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>
                         <div className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover">
                             <svg viewBox="0 0 128 128">
                                 <path d="m-2.3125e-8 8.9337 49.854 0.1586 14.167 24.47 14.432-24.47 49.547-0.1577-63.834 110.14zm126.98 0.6374-24.36 0.0207-38.476 66.052-38.453-66.052-24.749-0.0194 63.211 107.89zm-25.149-0.008-22.745 0.16758l-15.053 24.647-14.817-24.647-22.794-0.1679 37.731 64.476zM25.997 9.3929l23.002 0.0087M25.997 9.3929l23.002 0.0087" fill="none"></path><path d="m25.997 9.3929 23.002 0.0087l15.036 24.958 14.983-24.956 22.982-0.0057-37.85 65.655z" fill="#35495e"></path><path d="m0.91068 9.5686 25.066-0.1711 38.151 65.658 37.852-65.654 25.11 0.0263-62.966 108.06z" fill="#41b883"></path>
@@ -332,10 +332,10 @@ function Projects() {
                             <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
-                        <h1 className="font-extrabold text-lg">Vue-Chat</h1>
+                        <h3 className="font-extrabold text-lg">Vue-Chat</h3>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">A chat app with the ability to record and upload audio from the device. Using Vue routing, Firebase and Tailwind CSS. Under construction</h2>
+                            <p className="md:px-8 mx-2 md:mx-1 text-md">A chat app with the ability to record and upload audio from the device. Using Vue routing, Firebase and Tailwind CSS. Under construction</p>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">
@@ -361,9 +361,9 @@ function Projects() {
                     </div>
                 </div>
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
-                    <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                        <button className='h8 bottom-1 items-center mr-3 border border-blue-400 hover:bg-blue-800 hover:text-white rounded outline-none focus:outline-none bg-transparent text-blue-300 text-sm py-1 px-2'><a href="https://github.com/kevsaj/HappyBirthdayWisher" target="_blank" rel="noopener noreferrer">Github</a></button>                        <Image
-                            src="/assets/fb.gif"
-                            alt="Puppeteer app"
+                    <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">                        <a href="https://github.com/kevsaj/HappyBirthdayWisher" target="_blank" rel="noopener noreferrer" className='inline-flex h-8 items-center mr-3 border border-blue-500 hover:bg-blue-800 hover:text-white rounded bg-transparent text-blue-700 text-sm py-1 px-2'>GitHub</a>                        <Image
+                            src="/assets/fb.webp"
+                            alt="HappyBirthdayWisher Puppeteer automation demo"
                             width={160}
                             height={160}
                             className="w-40 h-40 rounded-2xl flex items-center border-pink-200 border-opacity-100 border-4 object-cover"
@@ -372,10 +372,10 @@ function Projects() {
                         <span aria-hidden="true" className='invisible ml-3 w-12' />
                     </div>
                     <div className="m-2 justify-center mx-auto">
-                            <h1 className="font-extrabold text-lg">HappyBirthdayWisher</h1>
+                            <h3 className="font-extrabold text-lg">HappyBirthdayWisher</h3>
                     </div>
                     <div className="mb-2 h-28 justify-center mx-auto">
-                            <h2 className="md:px-8 mx-2 md:mx-1 text-md">Yay Puppeteer - wish my friends a happy birthday! Fun use of the incredible power of Puppeteer to automate Facebook!</h2>
+                            <p className="md:px-8 mx-2 md:mx-1 text-md">Yay Puppeteer - wish my friends a happy birthday! Fun use of the incredible power of Puppeteer to automate Facebook!</p>
                     </div>
                     <div className="mb-4 justify-center flex flex-row gap-4 mx-auto">
                         <div className="h-10 w-10">

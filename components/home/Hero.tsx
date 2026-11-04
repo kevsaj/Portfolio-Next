@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { BOOKING_URL } from '../../utils/site';
 
 const chips = ['Websites', 'Web & mobile apps', 'Shopify stores', 'Games', 'APIs', 'Databases', 'Dashboards & reports', 'Branding', 'Marketing'];
 
@@ -9,7 +10,7 @@ export default function Hero() {
             <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1.4fr_1fr]">
                 <div>
                     <p className="mb-4 inline-block rounded-full bg-pink-100 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-pink-700 dark:bg-pink-900/40 dark:text-pink-300">
-                        KIS Studios · Keep it simple · Toronto & remote
+                        KIS Studios · Web &amp; app developer · Toronto &amp; remote
                     </p>
                     <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white md:text-6xl">
                         Got an idea, or stuck online?{' '}
@@ -21,9 +22,9 @@ export default function Hero() {
                         One person, start to finish, in plain English.
                     </p>
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                        <Link href="/#contact" className="rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-7 py-3 text-center font-semibold text-white shadow-lg transition hover:scale-105 hover:from-pink-600 hover:to-purple-700">
+                        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-7 py-3 text-center font-semibold text-white shadow-lg transition hover:scale-105 hover:from-pink-600 hover:to-purple-700">
                             Book a free consult
-                        </Link>
+                        </a>
                         <Link href="/#services" className="rounded-full border border-gray-300 bg-white/60 px-7 py-3 text-center font-semibold text-gray-800 transition hover:bg-white dark:border-gray-600 dark:bg-gray-800/60 dark:text-gray-100 dark:hover:bg-gray-800">
                             See what I can build
                         </Link>

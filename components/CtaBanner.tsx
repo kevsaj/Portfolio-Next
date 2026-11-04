@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BOOKING_URL } from '../utils/site';
 
 interface CtaBannerProps {
     title?: string;
@@ -16,9 +17,14 @@ export default function CtaBanner({
                     <h2 className="text-2xl font-bold md:text-3xl">{title}</h2>
                     <p className="mt-2 text-pink-50">{body}</p>
                 </div>
-                <Link href="/#contact" className="shrink-0 rounded-full bg-white px-7 py-3 font-semibold text-purple-700 shadow-lg transition hover:scale-105">
-                    Start a project
-                </Link>
+                <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+                    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-white px-7 py-3 text-center font-semibold text-purple-700 shadow-lg transition hover:scale-105">
+                        Book a free call
+                    </a>
+                    <Link href="/#contact" className="rounded-full border border-white/70 px-7 py-3 text-center font-semibold text-white transition hover:bg-white/10">
+                        Send a message
+                    </Link>
+                </div>
             </div>
         </section>
     );
