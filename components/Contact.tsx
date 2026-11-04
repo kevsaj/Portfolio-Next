@@ -180,7 +180,7 @@ export default function Contact() {
                         </div>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Message Sent Successfully! 🎉</h2>
                         <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                            Thank you for reaching out! I'll get back to you within 24 hours.
+                            Thanks for reaching out! I&apos;ll reply within 24 hours with next steps and my direct number so we can set up a free call.
                         </p>
                         <button 
                             onClick={() => setIsSuccess(false)} 
@@ -195,16 +195,17 @@ export default function Contact() {
     }
 
     return (
-        <div id="contact" className="py-20 px-4 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
+        <div id="contact" className="scroll-mt-24 py-20 px-4 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
             <div className="max-w-6xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                        Let's Work Together
-                    </h1>
+                    <p className="text-sm font-semibold uppercase tracking-widest text-pink-600 dark:text-pink-400 mb-2">Start a project</p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                        Let&apos;s build something together
+                    </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Have a project in mind or want to discuss opportunities? 
-                        I'd love to hear from you. Drop me a message and let's create something amazing together!
+                        Whether it&apos;s a brand-new idea or something online that just isn&apos;t working, tell me about it.
+                        The first conversation is free, and you&apos;ll get a clear plan and quote before any work starts.
                     </p>
                 </div>
 
@@ -249,8 +250,8 @@ export default function Contact() {
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="font-medium text-gray-900 dark:text-white">Response Time</p>
-                                        <p className="text-gray-600 dark:text-gray-400">Within 24 hours</p>
+                                        <p className="font-medium text-gray-900 dark:text-white">Prefer a call?</p>
+                                        <p className="text-gray-600 dark:text-gray-400">Send the form and I&apos;ll reply within 24 hours with my direct number.</p>
                                     </div>
                                 </div>
                             </div>
@@ -315,7 +316,7 @@ export default function Contact() {
                                     required
                                     value={formData.name}
                                     onChange={handleInputChange}
-                                    placeholder="Kevin Sajan"
+                                    placeholder="Jane Smith"
                                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:text-white transition-all duration-300 placeholder-gray-400 ${
                                         validationErrors.name 
                                             ? 'border-red-500 dark:border-red-400' 
@@ -341,7 +342,7 @@ export default function Contact() {
                                     required
                                     value={formData.email}
                                     onChange={handleInputChange}
-                                    placeholder="kevsaj@gmail.com"
+                                    placeholder="you@company.com"
                                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:text-white transition-all duration-300 placeholder-gray-400 ${
                                         validationErrors.email 
                                             ? 'border-red-500 dark:border-red-400' 
@@ -355,10 +356,37 @@ export default function Contact() {
                                 )}
                             </div>
 
+                            {/* Service Field */}
+                            <div>
+                                <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    What do you need help with?
+                                </label>
+                                <select
+                                    name="service"
+                                    id="service"
+                                    defaultValue=""
+                                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 bg-white dark:bg-gray-700 dark:text-white transition-all duration-300"
+                                >
+                                    <option value="" disabled>Choose one (optional)</option>
+                                    <option>Website</option>
+                                    <option>Web or mobile app</option>
+                                    <option>Shopify / online store</option>
+                                    <option>Game or interactive experience</option>
+                                    <option>API or integration</option>
+                                    <option>Database</option>
+                                    <option>Desktop tool / GUI</option>
+                                    <option>Automation</option>
+                                    <option>Reports, dashboards or data analysis</option>
+                                    <option>Branding & design</option>
+                                    <option>Marketing & online presence</option>
+                                    <option>Not sure yet / something else</option>
+                                </select>
+                            </div>
+
                             {/* Message Field */}
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    Message * 
+                                    Tell me about your project * 
                                     <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">
                                         ({formData.message.length}/2000 characters)
                                     </span>
@@ -370,7 +398,7 @@ export default function Contact() {
                                     rows={5}
                                     value={formData.message}
                                     onChange={handleInputChange}
-                                    placeholder="Hi Kevin, I'd love to discuss a project opportunity with you..."
+                                    placeholder="Hi Kevin, I run a small bakery and want an online store where customers can order ahead..."
                                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:text-white transition-all duration-300 placeholder-gray-400 resize-none ${
                                         validationErrors.message 
                                             ? 'border-red-500 dark:border-red-400' 
