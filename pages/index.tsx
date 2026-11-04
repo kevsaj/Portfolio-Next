@@ -21,7 +21,7 @@ const jsonLd = {
       name: 'KIS Studios',
       url: `${SITE_URL}/`,
       image: `${SITE_URL}/og-image.png`,
-      email: 'kevsaj@gmail.com',
+      email: 'kisstudios98@gmail.com',
       description:
         'Freelance web developer in Toronto building websites, web and mobile apps, Shopify stores, games, APIs, databases, dashboards and SEO for small businesses.',
       address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressRegion: 'ON', addressCountry: 'CA' },

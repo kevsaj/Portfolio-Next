@@ -224,7 +224,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <p className="font-medium text-gray-900 dark:text-white">Email</p>
-                                        <a href="mailto:kevsaj@gmail.com" className="text-pink-600 dark:text-pink-400 hover:underline">kevsaj@gmail.com</a>
+                                        <a href="mailto:kisstudios98@gmail.com" className="text-pink-600 dark:text-pink-400 hover:underline">kisstudios98@gmail.com</a>
                                     </div>
                                 </div>
 
