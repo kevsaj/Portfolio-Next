@@ -27,3 +27,16 @@ export const BING_SITE_VERIFICATION = '';
 
 /** Google review link ("Ask for reviews" in Google Business Profile). Shown in the footer once set. */
 export const REVIEW_URL = '';
+
+/**
+ * Google Ads conversion tracking. Leave GOOGLE_ADS_ID empty and no Google tag loads.
+ * From Google Ads: Goals > Conversions > (your conversion) > Tag setup > Install the tag yourself.
+ * The snippet shows send_to: 'AW-123456789/AbCdEfGh' -> ID is 'AW-123456789', label is 'AbCdEfGh'.
+ */
+export const GOOGLE_ADS_ID = '';
+export const GOOGLE_ADS_CONVERSIONS = {
+    /** Contact form sent successfully. */
+    contactForm: '',
+    /** Click on any "Book a free consult" (Cal.com) link. */
+    bookingClick: '',
+};

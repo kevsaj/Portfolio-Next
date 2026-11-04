@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { BOOKING_URL, CONTACT_EMAIL } from '../utils/site';
+import { BOOKING_URL, CONTACT_EMAIL, GOOGLE_ADS_CONVERSIONS } from '../utils/site';
+import { trackConversion } from '../utils/gtag';
 import { 
     isValidEmail, 
     isDisposableEmail, 
@@ -147,6 +148,7 @@ export default function Contact() {
             if (response.ok) {
                 console.log('Form submission succeeded!');
                 setIsSuccess(true);
+                trackConversion(GOOGLE_ADS_CONVERSIONS.contactForm);
                 setLastSubmissionTime();
                 // Reset form
                 setFormData({ name: '', email: '', message: '' });
