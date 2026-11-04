@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { BING_SITE_VERIFICATION, GOOGLE_SITE_VERIFICATION } from '../utils/site';
 
 export const SITE_URL = 'https://kisstudios.net';
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
@@ -22,6 +23,8 @@ export default function SiteHead({ title, description, path = '/', jsonLd }: Sit
             <meta name="theme-color" content="#ec4899" />
             <link rel="icon" href="/favicon.ico" />
             <link rel="canonical" href={url} />
+            {GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />}
+            {BING_SITE_VERIFICATION && <meta name="msvalidate.01" content={BING_SITE_VERIFICATION} />}
 
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="KIS Studios" />
