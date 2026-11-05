@@ -9,6 +9,7 @@ export default function Footer() {
                 <div className="flex flex-wrap gap-4">
                     <Link href="/#services" className="hover:text-pink-600">Services</Link>
                     <Link href="/about" className="hover:text-pink-600">About</Link>
+                    <Link href="/goodsprout" className="hover:text-pink-600">Goodsprout</Link>
                     <Link href="/#contact" className="hover:text-pink-600">Contact</Link>
                     {REVIEW_URL && (
                         <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">Review us on Google</a>

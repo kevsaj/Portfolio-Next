@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
+import Link from 'next/link'
 
 function Projects() {
 
@@ -9,6 +10,15 @@ function Projects() {
             <p className="text-sm font-semibold uppercase tracking-widest text-pink-600 dark:text-pink-400">Selected work</p>
             <h2 className="mt-2 mb-4 text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white">Things I&apos;ve built</h2>
             <p className="mb-6 max-w-2xl px-4 text-center text-gray-600 dark:text-gray-300">A few personal and open-source projects: full-stack apps, PWAs, a small game and automation tools. The code is on GitHub.</p>
+            <Link href="/goodsprout" className="group mx-4 mb-6 flex w-full max-w-3xl flex-col items-center gap-5 rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-lime-50 p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-emerald-900/60 dark:from-emerald-950/50 dark:to-gray-900/60 sm:flex-row sm:text-left">
+                <Image src="/goodsprout/icon.webp" alt="Goodsprout app icon" width={96} height={96} className="h-24 w-24 shrink-0 rounded-2xl shadow-md" unoptimized />
+                <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-400">New · Mobile app</p>
+                    <h3 className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">Goodsprout</h3>
+                    <p className="mt-1 text-gray-600 dark:text-gray-300">A private, offline-first daily journal for gratitude, self-kindness and green living, with a 3D plant that grows as you go. React Native, Expo, SQLCipher and three.js.</p>
+                    <span className="mt-2 inline-block font-semibold text-emerald-700 group-hover:underline dark:text-emerald-400">See the app →</span>
+                </div>
+            </Link>
             <div className="pt-4 mx-auto flex flex-row flex-wrap gap-7 gap-y-14 justify-center items-center p-5 pb-20">
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
                         <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">
