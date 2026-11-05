@@ -13,7 +13,7 @@ function Projects() {
             <Link href="/goodsprout" className="group mx-4 mb-6 flex w-full max-w-3xl flex-col items-center gap-5 rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-lime-50 p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-emerald-900/60 dark:from-emerald-950/50 dark:to-gray-900/60 sm:flex-row sm:text-left">
                 <Image src="/goodsprout/icon.webp" alt="Goodsprout app icon" width={96} height={96} className="h-24 w-24 shrink-0 rounded-2xl shadow-md" unoptimized />
                 <div>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-400">New · Mobile app</p>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-400">New · Android app</p>
                     <h3 className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">Goodsprout</h3>
                     <p className="mt-1 text-gray-600 dark:text-gray-300">A private, offline-first daily journal for gratitude, self-kindness and green living, with a 3D plant that grows as you go. React Native, Expo, SQLCipher and three.js.</p>
                     <span className="mt-2 inline-block font-semibold text-emerald-700 group-hover:underline dark:text-emerald-400">See the app →</span>
