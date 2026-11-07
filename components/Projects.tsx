@@ -19,6 +19,15 @@ function Projects() {
                     <span className="mt-2 inline-block font-semibold text-emerald-700 group-hover:underline dark:text-emerald-400">See the app →</span>
                 </div>
             </Link>
+            <Link href="/loopbot" className="group mx-4 mb-6 flex w-full max-w-3xl flex-col items-center gap-5 rounded-3xl border border-[#262a3d] bg-gradient-to-br from-[#1b1d2a] to-[#2b2546] p-6 text-center text-[#ece6f5] shadow-sm transition hover:-translate-y-1 hover:shadow-xl sm:flex-row sm:text-left">
+                <Image src="/loopbot/icon.webp" alt="LoopBot app icon" width={96} height={96} className="h-24 w-24 shrink-0 rounded-2xl shadow-md" unoptimized />
+                <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-[#7ff2e0]">New · Game · Web &amp; Android</p>
+                    <h3 className="mt-1 text-2xl font-bold">LoopBot</h3>
+                    <p className="mt-1 text-[#ece6f5]/80">A coding puzzle game: program a little robot and climb a 50-floor skyscraper, learning loops, functions and logic on the way. React, TypeScript, Phaser and Capacitor.</p>
+                    <span className="mt-2 inline-block font-semibold text-[#7ff2e0] group-hover:underline">Play the free demo →</span>
+                </div>
+            </Link>
             <div className="pt-4 mx-auto flex flex-row flex-wrap gap-7 gap-y-14 justify-center items-center p-5 pb-20">
                 <div className="flex flex-col w-80 bg-gradient-to-b from-pink-200 to-white rounded-3xl h-auto opacity-80 transform transition duration-500 ease-in-out hover:bg-indigo-100 hover:bg-opacity-50 hover:scale-110">
                         <div className="mt-4 justify-center space-between mx-auto flex flex-row items-end">

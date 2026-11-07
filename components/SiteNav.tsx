@@ -7,6 +7,7 @@ const links = [
     { href: '/#process', label: 'How it works' },
     { href: '/#work', label: 'Work' },
     { href: '/goodsprout', label: 'Goodsprout' },
+    { href: '/loopbot', label: 'LoopBot' },
     { href: '/about', label: 'About' },
 ];
 
