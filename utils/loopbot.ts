@@ -39,10 +39,17 @@ export const PLAY_LIVE = false;
  * Example entry:
  *   { src: '/loopbot/phone-1-tower.webp', caption: 'Climb 50 floors' },
  */
-export const SCREENSHOTS: { src: string; caption: string }[] = [];
+export const SCREENSHOTS: { src: string; caption: string }[] = [
+    { src: '/loopbot/phone-1-tower.webp', caption: 'Climb 50 floors' },
+    { src: '/loopbot/phone-2-repeat.webp', caption: 'Loops do the heavy lifting' },
+    { src: '/loopbot/phone-3-ifelse.webp', caption: 'Make LoopBot think' },
+    { src: '/loopbot/phone-4-code.webp', caption: 'See the real code' },
+    { src: '/loopbot/phone-5-cleared.webp', caption: 'Three stars for a perfect program' },
+];
 
 /**
- * Wide hero image (feature-graphic-1024x500) and share image. While empty, the
+ * Wide hero image (feature-graphic-1024x500). The share image (og:image) uses
+ * the PNG next to it, since not every social site reads WebP. While empty, the
  * hero shows the drawn skyline and the share card uses the app icon.
  */
-export const FEATURE_GRAPHIC = '';
+export const FEATURE_GRAPHIC = '/loopbot/feature-graphic-1024x500.webp';

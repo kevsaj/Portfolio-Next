@@ -108,7 +108,7 @@ const numbers = [
 const testerHref = TESTER_FORM_URL || `mailto:${CONTACT_EMAIL}?subject=LoopBot%20Android%20tester&body=Hi%20Kevin%2C%20I%27d%20like%20to%20test%20LoopBot.%20My%20Play%20Store%20Gmail%20address%20is%3A%20`;
 
 const shareImage = FEATURE_GRAPHIC
-    ? { url: `${SITE_URL}${FEATURE_GRAPHIC}`, width: 1024, height: 500, alt: 'LoopBot: a coding puzzle game by KIS Studios' }
+    ? { url: `${SITE_URL}${FEATURE_GRAPHIC.replace(/\.webp$/, '.png')}`, width: 1024, height: 500, alt: 'LoopBot: a coding puzzle game by KIS Studios' }
     : { url: `${SITE_URL}/loopbot/icon-512.png`, width: 512, height: 512, alt: 'LoopBot app icon: a small white robot with a glowing teal eye' };
 
 const jsonLd = {
@@ -237,7 +237,7 @@ export default function LoopBot() {
                             </div>
                             <div className="relative -mx-6 sm:-mx-10 md:mx-0">
                                 {FEATURE_GRAPHIC ? (
-                                    <Image src={FEATURE_GRAPHIC} alt="LoopBot climbing the tower" width={1024} height={500} className="h-auto w-full rounded-2xl" unoptimized priority />
+                                    <Image src={FEATURE_GRAPHIC} alt="LoopBot, the little robot, in front of a city skyline at dusk" width={1024} height={500} className="h-auto w-full rounded-2xl" unoptimized priority />
                                 ) : (
                                     <Skyline />
                                 )}
