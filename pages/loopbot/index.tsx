@@ -101,7 +101,7 @@ const flow = ['Floor file (JSON)', 'Solver checks par', 'You build a program', '
 const numbers = [
     { value: '50', label: 'floors in Tower 1' },
     { value: '5', label: 'zones, one coding idea each' },
-    { value: '0', label: 'image or audio files for the game world' },
+    { value: '0', label: 'art or sound files: the world, the bot and every sound are made in code' },
     { value: '1', label: 'codebase for web and Android' },
 ];
 
