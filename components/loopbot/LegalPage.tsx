@@ -31,7 +31,7 @@ export default function LegalPage({ title, description, path, updated, summary, 
                         {summary}
                     </div>
                 )}
-                <div className="legal mt-4 text-gray-700 dark:text-gray-300 [&_a]:font-medium [&_a]:text-teal-700 [&_a]:underline [&_a]:underline-offset-2 dark:[&_a]:text-[#7ff2e0] [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 dark:[&_h2]:text-white [&_p]:mt-3 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-6 [&_strong]:font-semibold [&_strong]:text-gray-900 dark:[&_strong]:text-white">
+                <div className="legal mt-4 text-gray-700 dark:text-gray-300 [&_a]:font-medium [&_a]:text-teal-700 [&_a]:underline [&_a]:underline-offset-2 dark:[&_a]:text-[#7ff2e0] [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-gray-900 dark:[&_h2]:text-white [&_h3]:mt-6 [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-900 dark:[&_h3]:text-white [&_p]:mt-3 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-6 [&_strong]:font-semibold [&_strong]:text-gray-900 dark:[&_strong]:text-white">
                     {children}
                 </div>
                 <p className="mt-12 text-sm">

@@ -8,7 +8,7 @@ export default function LoopBotTerms() {
             title="LoopBot Terms of Use"
             description="The terms for downloading, installing and playing LoopBot, a coding puzzle game by KIS Studios, on Android or on the web."
             path="/loopbot/terms"
-            updated="November 7, 2026"
+            updated="November 8, 2026"
         >
             <p>
                 These terms apply when you download, install or play <strong>LoopBot</strong> (the &quot;Game&quot;), made by KIS
@@ -45,7 +45,11 @@ export default function LoopBotTerms() {
 
             <h2>4. Your data</h2>
             <p>
-                The Game collects no personal information. See the <Link href="/loopbot/privacy">LoopBot Privacy Policy</Link>.
+                The Game does not collect your name, email address or other personal information. The Android app can send
+                anonymous gameplay statistics, which you can turn off at any time in{' '}
+                <strong>Settings &gt; Share anonymous stats</strong>, and we receive any feedback you choose to send from inside
+                the Game. The <Link href="/loopbot/privacy">LoopBot Privacy Policy</Link> explains what is collected and how it
+                is used.
             </p>
 
             <h2>5. Purchases</h2>
