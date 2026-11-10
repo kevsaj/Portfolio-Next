@@ -17,7 +17,7 @@ const jsonLd = {
     '@type': 'Person',
     '@id': `${SITE_URL}/about#kevin`,
     name: 'Kevin Sajan',
-    jobTitle: 'Full-stack software developer',
+    jobTitle: 'Software developer',
     url: `${SITE_URL}/about`,
     image: `${SITE_URL}/self.png`,
     worksFor: { '@id': `${SITE_URL}/#business` },
@@ -30,8 +30,8 @@ export default function About() {
   return (
     <>
       <SiteHead
-        title="About Kevin Sajan | KIS Studios"
-        description="Kevin Sajan is a Toronto full-stack developer at MacLean Engineering, former Deloitte financial advisory technician and Master of Data Science student at the University of Pittsburgh."
+        title="Kevin Sajan, Software Developer | Résumé and experience"
+        description="Kevin Sajan is a Toronto-area software developer who builds machine HMIs in C++, Qt/QML and Python at MacLean Engineering, plus full-stack web and mobile apps. Open to software engineering roles."
         path="/about"
         jsonLd={jsonLd}
       />
@@ -41,7 +41,7 @@ export default function About() {
         <ScrollAnimation animation="fadeInUp"><WorkExperience /></ScrollAnimation>
         <ScrollAnimation animation="fadeInUp"><Skills /></ScrollAnimation>
         <ScrollAnimation animation="fadeInUp"><Education /></ScrollAnimation>
-        <CtaBanner title="Have a project in mind?" body="I take on websites, apps, stores, games, data and marketing work. Let’s talk about yours." />
+        <CtaBanner title="Hiring, or have a project in mind?" body="I’m open to software engineering roles, and I take on client projects through KIS Studios. Either way, let’s talk." />
       </main>
       <Footer />
     </>

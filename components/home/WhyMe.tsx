@@ -19,6 +19,12 @@ export default function WhyMe() {
                     <Link href="/about" className="mt-6 inline-block font-semibold text-pink-600 underline-offset-4 hover:underline dark:text-pink-400">
                         Read my background →
                     </Link>
+                    <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                        Hiring an engineer?{' '}
+                        <Link href="/about" className="font-semibold text-purple-700 underline-offset-4 hover:underline dark:text-purple-300">
+                            See my experience and résumé →
+                        </Link>
+                    </p>
                 </div>
                 <div className="grid gap-5">
                     {reasons.map((r) => (

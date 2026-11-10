@@ -42,7 +42,7 @@ export default function Hero() {
                     </div>
                     <div className="relative -mt-8 ml-4 inline-block rounded-2xl bg-white px-4 py-3 shadow-xl dark:bg-gray-800">
                         <p className="text-sm font-semibold text-gray-900 dark:text-white">Kevin Sajan</p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">Developer since 2021 · MDS student</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">Software developer since 2021</p>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ export default function Footer() {
                 <p>© {new Date().getFullYear()} KIS Studios · Keep it simple · Kevin Sajan, Toronto</p>
                 <div className="flex flex-wrap gap-4">
                     <Link href="/#services" className="hover:text-pink-600">Services</Link>
-                    <Link href="/about" className="hover:text-pink-600">About</Link>
+                    <Link href="/about" className="hover:text-pink-600">About &amp; résumé</Link>
                     <Link href="/goodsprout" className="hover:text-pink-600">Goodsprout</Link>
                     <Link href="/loopbot" className="hover:text-pink-600">LoopBot</Link>
                     <Link href="/#contact" className="hover:text-pink-600">Contact</Link>

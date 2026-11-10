@@ -5,6 +5,8 @@ const education = [
 ];
 
 const certifications = [
+    'Microsoft AZ-104: Azure Administrator',
+    'Microsoft MS-102: Microsoft 365 Administrator',
     'Udacity: Android Basics Nanodegree by Google',
     'Coursera: Google IT Support Professional Certificate',
     'LinkedIn Learning / Microsoft Press: Complete Guide to Power BI for Data Analysts',

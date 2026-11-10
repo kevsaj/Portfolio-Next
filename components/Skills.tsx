@@ -1,13 +1,14 @@
 import Icons from './Icons';
 
 const groups = [
-    { name: 'Languages', items: 'Python, JavaScript, TypeScript, Java, C++, HTML, CSS, SQL, Sass' },
-    { name: 'Frameworks & libraries', items: 'React, Next.js, Angular, Vue, Node, Express, jQuery, Bootstrap, Tailwind, Redux' },
-    { name: 'Databases & ORMs', items: 'PostgreSQL, MongoDB, Oracle, Sequelize, Mongoose' },
-    { name: 'Cloud & DevOps', items: 'Azure (incl. ML & Kubernetes), AWS, Firebase, Vercel, Heroku, Docker, CI/CD, Git' },
-    { name: 'Testing & automation', items: 'Jest, Cypress, Puppeteer, Selenium' },
+    { name: 'Languages', items: 'C++, Python, TypeScript, JavaScript, SQL, Java, HTML, CSS' },
+    { name: 'HMI & embedded', items: 'Qt, QML, OPC UA, embedded Linux displays, Tkinter, CMake, Protocol Buffers' },
+    { name: 'Web & mobile', items: 'React, Next.js, React Native, Node, Express, Angular, Vue, Tailwind, Phaser' },
+    { name: 'Databases', items: 'PostgreSQL, MongoDB, SQLite, Oracle, Sequelize, Mongoose' },
+    { name: 'Cloud & DevOps', items: 'Azure (DevOps pipelines, Kubernetes), Docker, Linux, CI/CD, Git, Vercel, Firebase, AWS' },
+    { name: 'Testing & automation', items: 'Qt Test, Jest, Cypress, Puppeteer, Selenium, hardware-in-the-loop test plans' },
     { name: 'Data & visualization', items: 'Power BI, Tableau, Pandas, NumPy, Matplotlib, Open3D, Three.js' },
-    { name: 'Design & other', items: 'Figma, Photoshop, WordPress, Webpack, Babel, SAP FI & CO' },
+    { name: 'Design & other', items: 'Figma, Photoshop, technical documentation, release coordination' },
 ];
 
 export default function Skills() {
