@@ -7,17 +7,17 @@ export default function LoopBotPrivacy() {
             title="LoopBot Privacy Policy"
             description="LoopBot collects no personal information. No ads or third-party tracking. Optional anonymous gameplay stats you can turn off, and feedback only if you send it."
             path="/loopbot/privacy"
-            updated="November 8, 2026"
+            updated="November 10, 2026"
         >
             <p>
                 This policy covers <strong>LoopBot</strong>, a puzzle game by KIS Studios (&quot;we&quot;, &quot;us&quot;),
-                including the LoopBot app for Android and the LoopBot web demo on itch.io.
+                including the LoopBot apps for Android and iOS (iPhone and iPad) and the LoopBot web demo on itch.io.
             </p>
 
             <h2>The short version</h2>
             <p>
                 LoopBot does not collect your name, email address, account or any other personal information. There are no ads
-                and no third-party tracking. To make the puzzles better, the Android app can send{' '}
+                and no third-party tracking. To make the puzzles better, the app can send{' '}
                 <strong>anonymous gameplay statistics</strong> (for example, which floors players find hard), and you can turn
                 this off at any time in <strong>Settings &gt; Share anonymous stats</strong>. If you choose to send feedback from
                 inside the game, we receive your message.
@@ -34,7 +34,11 @@ export default function LoopBotPrivacy() {
                     number of seconds spent on a floor.
                 </li>
                 <li>
-                    <strong>App details:</strong> the app version and platform (for example, &quot;android&quot;).
+                    <strong>Error reports:</strong> if the app hits a programming error, the error message and where in the
+                    app&apos;s code it happened (file and line), so we can fix crashes. At most a few per session.
+                </li>
+                <li>
+                    <strong>App details:</strong> the app version and platform (for example, &quot;android&quot; or &quot;ios&quot;).
                 </li>
                 <li>
                     <strong>A random install ID:</strong> a random code created by the app on your device, used only to tell how
@@ -79,13 +83,38 @@ export default function LoopBotPrivacy() {
 
             <h2>What stays on your device</h2>
             <p>
-                Your progress (floors cleared, stars, hints) and the programs you build are saved only on your device, in the
-                app&apos;s own storage. We never receive them.
+                Your progress (floors cleared, stars, hints, daily challenge streak, achievements and LoopBot&apos;s look), your
+                settings and the programs you build are saved only on your device, in the app&apos;s own storage. We never
+                receive them.
             </p>
+            <ul>
+                <li>
+                    <strong>Backup codes:</strong> In <strong>Settings &gt; Your progress</strong> you can copy a backup code that
+                    contains your progress, and paste it in later to restore it. The code is made on your device and is never sent
+                    to us. Where you keep it (for example, a note or an email to yourself) is up to you.
+                </li>
+                <li>
+                    <strong>Daily reminder:</strong> If you turn on <strong>Settings &gt; Daily reminder</strong>, the app asks your
+                    permission to show notifications and schedules them on your device. Reminders are created by the app itself;
+                    no information is sent to us or to a notification service to make them work. You can turn them off in
+                    Settings or in your device&apos;s notification settings at any time.
+                </li>
+                <li>
+                    <strong>Sharing:</strong> If you tap a share button, your device&apos;s own share sheet opens with a short
+                    message about the game. Nothing is shared unless you pick an app and send it, and we don&apos;t see what you
+                    share.
+                </li>
+                <li>
+                    <strong>Ratings:</strong> The app may occasionally show the standard rating prompt from Google Play or the App
+                    Store. Any rating or review you leave goes to Google or Apple under their policies; we don&apos;t see who rated.
+                </li>
+            </ul>
             <p>
-                If Android backup is turned on for your device, Android may include this game data in your personal backup with
-                Google. That backup is handled by Google under{' '}
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&apos;s Privacy Policy</a>,
+                If device backup is turned on (Android backup with Google, or iCloud Backup on iPhone and iPad), your device may
+                include this game data in your personal backup. That backup is handled by Google under{' '}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&apos;s Privacy Policy</a>{' '}
+                or by Apple under{' '}
+                <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple&apos;s Privacy Policy</a>,
                 not by us. Uninstalling the app or clearing its storage deletes your game data from the device.
             </p>
             <p>
@@ -95,11 +124,11 @@ export default function LoopBotPrivacy() {
                 option opens an email.
             </p>
 
-            <h2>Google Play</h2>
+            <h2>Google Play and the App Store</h2>
             <p>
-                When you download LoopBot from Google Play, Google may collect information about that download and your device
-                under its own privacy policy. We may see aggregated, anonymous statistics that Google Play Console provides to
-                every developer, such as install counts and crash reports. These never identify you to us.
+                When you download LoopBot from Google Play or the Apple App Store, Google or Apple may collect information about
+                that download and your device under their own privacy policies. We may see aggregated, anonymous statistics that
+                Google Play Console and App Store Connect provide to every developer, such as install counts and crash reports. These never identify you to us.
             </p>
 
             <h2>Children</h2>
