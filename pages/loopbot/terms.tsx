@@ -6,13 +6,13 @@ export default function LoopBotTerms() {
     return (
         <LegalPage
             title="LoopBot Terms of Use"
-            description="The terms for downloading, installing and playing LoopBot, a coding puzzle game by KIS Studios, on Android or on the web."
+            description="The terms for downloading, installing and playing LoopBot, a coding puzzle game by KIS Studios, on Android, iOS or the web."
             path="/loopbot/terms"
-            updated="November 8, 2026"
+            updated="November 10, 2026"
         >
             <p>
                 These terms apply when you download, install or play <strong>LoopBot</strong> (the &quot;Game&quot;), made by KIS
-                Studios (&quot;we&quot;, &quot;us&quot;), on Android or on the web. By playing the Game, you agree to these terms. If
+                Studios (&quot;we&quot;, &quot;us&quot;), on Android, iOS or the web. By playing the Game, you agree to these terms. If
                 you don&apos;t agree, please don&apos;t use the Game.
             </p>
 
@@ -45,17 +45,14 @@ export default function LoopBotTerms() {
 
             <h2>4. Your data</h2>
             <p>
-                The Game does not collect your name, email address or other personal information. The Android app can send
-                anonymous gameplay statistics, which you can turn off at any time in{' '}
-                <strong>Settings &gt; Share anonymous stats</strong>, and we receive any feedback you choose to send from inside
-                the Game. The <Link href="/loopbot/privacy">LoopBot Privacy Policy</Link> explains what is collected and how it
-                is used.
+                The Game collects no personal information. It can send anonymous gameplay statistics, which you can turn off in
+                Settings, and feedback you choose to send. See the <Link href="/loopbot/privacy">LoopBot Privacy Policy</Link>.
             </p>
 
             <h2>5. Purchases</h2>
             <p>
                 LoopBot is currently free and has no in-app purchases. If we add paid content later, we will update these terms
-                first. Any purchase through Google Play is also covered by Google Play&apos;s own terms.
+                first. Any purchase through Google Play or the Apple App Store is also covered by that store&apos;s own terms.
             </p>
 
             <h2>6. Updates and changes</h2>
@@ -81,13 +78,27 @@ export default function LoopBotTerms() {
             <h2>9. Ending these terms</h2>
             <p>
                 You can stop using the Game at any time by uninstalling it. We may end your license if you break these terms.
-                Sections 3, 7, 8 and 10 continue after these terms end.
+                Sections 3, 7, 8, 10 and 11 continue after these terms end.
             </p>
 
             <h2>10. Governing law</h2>
             <p>
                 These terms are governed by the laws of the Province of Ontario and the federal laws of Canada that apply there,
                 without regard to conflict-of-law rules, except where the law of your home country requires otherwise.
+            </p>
+
+            <h2>11. Apple App Store</h2>
+            <p>
+                If you got the Game from the Apple App Store, these terms are between you and KIS Studios, not Apple. Apple is not
+                responsible for the Game or its content, and has no obligation to provide maintenance or support for it. If the
+                Game fails to meet any applicable warranty, you may notify Apple, and Apple may refund the purchase price, if any;
+                to the fullest extent the law allows, Apple has no other warranty obligation for the Game. Apple is not
+                responsible for any claims relating to the Game, including product liability claims, claims that it fails to meet
+                legal or regulatory requirements, consumer protection or privacy claims, or claims that it infringes someone
+                else&apos;s intellectual property. You confirm that you are not located in a country subject to a U.S. Government
+                embargo or listed as a terrorist-supporting country, and that you are not on any U.S. Government list of
+                prohibited or restricted parties. Apple and its subsidiaries are third-party beneficiaries of these terms and may
+                enforce them against you. Your use of the Game must also follow the App Store&apos;s usage rules.
             </p>
 
             <h2>Contact</h2>
