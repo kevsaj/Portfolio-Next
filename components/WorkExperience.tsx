@@ -1,171 +1,86 @@
-import React from 'react';
-import FlipCard from './FlipCard';
+import Link from 'next/link';
 import CompactPointCloudDemo from './CompactPointCloudDemo';
-import FinancialDataChart from './FinancialDataChart';
 
-function WorkExperience() {
+const maclean = [
+    <>Develop <strong>operator HMIs for underground mining machines</strong>, including a battery-electric grader: in-cab displays in <strong>C++ and Qt/QML</strong> on embedded Linux, built from a shared library of gauges, indicators and status bars.</>,
+    <>Built the data layer that connects the display to the machine&apos;s controller over <strong>OPC UA</strong>, so live machine signals such as speed, steering, battery and faults reach the screen reliably.</>,
+    <>Designed <strong>battery status and health screens</strong> for an electric machine, working with controls engineers to get the right signals and units from the controller.</>,
+    <>Found and fixed a <strong>crash in the live-data subscription code</strong>, then added a regression test that reproduces the fault so it cannot come back unnoticed.</>,
+    <>Write release <strong>test plans</strong> with QA and controls engineers and run them on hardware simulation boards, catching defects before software reaches a machine.</>,
+    <>Maintain <strong>Python remote-control software</strong> on rugged Linux tablets, with live camera feeds, machine status and fault codes in English and Spanish, packaged with Docker through an automated pipeline.</>,
+    <>Earlier: a <strong>3D point cloud analysis tool</strong> (Python, Open3D), <strong>React</strong> dashboards for machine data, and <strong>Node.js and PostgreSQL REST APIs</strong> deployed on Azure Kubernetes with Jest and Cypress tests.</>,
+    <>Coordinate releases across several applications on a team that has <strong>grown from 4 to 12 developers</strong>, helping newer developers get up to speed.</>,
+];
+
+const deloitte = [
+    <>Automated <strong>document linking and data entry</strong> with Puppeteer, cutting manual effort and errors.</>,
+    <>Audited invoices and tax returns to find discrepancies and resolve client and vendor disputes.</>,
+    <>Supported financial analysis and compliance reviews across several advisory engagements.</>,
+];
+
+function Job({ title, company, dates, bullets, tech, children }: {
+    title: string; company: string; dates: string; bullets: React.ReactNode[]; tech: string[]; children?: React.ReactNode;
+}) {
     return (
-        <>
-            <div id="experience" className="flex flex-col justify-center items-center py-12">
-                <h2 className="mb-12 text-3xl font-bold text-gray-900 dark:text-white">Work experience</h2>
-                
-                <div className="max-w-6xl mx-auto px-4">
-                    {/* MacLean Engineering - Flip Card */}
-                    <div className="mb-12">
-                        <FlipCard
-                            autoFlip={true}
-                            flipInterval={8000}
-                            backContent={
-                                <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-lg p-8 pb-16 text-white h-full">
-                                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
-                                        <div>
-                                            <h2 className="text-2xl font-bold text-white">3D Point Cloud System</h2>
-                                            <h3 className="text-xl font-semibold text-blue-400 mb-2">Live Demo</h3>
-                                        </div>
-                                        <div className="text-gray-300 font-medium">
-                                            Interactive Visualization
-                                        </div>
-                                    </div>
-                                    
-                                    <CompactPointCloudDemo />
-                                    
-                                    <div className="mt-6 mb-6 text-gray-300 text-sm">
-                                        <p className="mb-2">🔬 <strong>Technologies:</strong> Python, Open3D, matplotlib, Three.js</p>
-                                        <p className="mb-2">📊 <strong>Features:</strong> Real-time clustering, automated analysis, statistical reporting</p>
-                                        <p>⚡ <strong>Performance:</strong> Processing 5K+ points with sub-second response times</p>
-                                    </div>
-                                </div>
-                            }
-                        >
-                            <div className="bg-gradient-to-b from-pink-200 to-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden opacity-80">
-                                <div className="p-8 pb-16">
-                                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                                        <div>
-                                            <h2 className="text-2xl font-bold text-gray-900">Software Developer</h2>
-                                            <h3 className="text-xl font-semibold text-blue-600 mb-2">MacLean Engineering</h3>
-                                        </div>
-                                        <div className="text-gray-600 font-medium md:pr-10">
-                                            July 2021 – Present
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="space-y-3 text-gray-700">
-                                        <div className="flex items-start">
-                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
-                                            <p>Build <strong>machine HMIs</strong> (human-machine interfaces) that operators use to monitor and control heavy equipment</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
-                                            <p>Built <strong>3D point cloud visualization system</strong> using Python, Open3D, and matplotlib with automated reporting and statistical analysis</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
-                                            <p>Led <strong>full-stack development and DevOps deployment</strong> using Microsoft Azure</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
-                                            <p>Developed <strong>Python GUI tools</strong> with Tkinter, threading, and i18n support, featuring custom animations</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
-                                            <p>Created <strong>dynamic React components</strong> for machine data visualization and vehicle management</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
-                                            <p>Designed and tested <strong>RESTful APIs</strong> with Node.js, Express, PostgreSQL, and Sequelize</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
-                                            <p>Implemented <strong>automated testing</strong> with Jest and Cypress; deployed via Azure Kubernetes</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-blue-500 mr-2 mt-1">▶</span>
-                                            <p>Leveraged <strong>Power BI and analytics tools</strong> to extract insights from machine data</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="mt-6 flex flex-wrap gap-2">
-                                        {['Python', 'React', 'Azure', 'Open3D', 'Node.js', 'PostgreSQL', 'Power BI', 'Kubernetes'].map((tech) => (
-                                            <span key={tech} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </FlipCard>
-                    </div>
-
-                    {/* Deloitte - Flip Card */}
-                    <div className="mb-8">
-                        <FlipCard
-                            autoFlip={true}
-                            flipInterval={7000}
-                            backContent={
-                                <div className="bg-gradient-to-br from-green-900 to-gray-900 rounded-3xl shadow-lg p-8 pb-16 md:pb-8 text-white h-full">
-                                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
-                                        <div>
-                                            <h2 className="text-2xl font-bold text-white">Process Automation Analytics</h2>
-                                            <h3 className="text-xl font-semibold text-green-400 mb-2">Live Dashboard</h3>
-                                        </div>
-                                        <div className="text-gray-300 font-medium">
-                                            Financial Efficiency
-                                        </div>
-                                    </div>
-                                    
-                                    <FinancialDataChart />
-                                    
-                                    <div className="mt-6 mb-4 md:mb-0 text-gray-300 text-sm">
-                                        <p className="mb-2">🤖 <strong>Automation:</strong> Puppeteer web scraping, document processing</p>
-                                        <p className="mb-2">📋 <strong>Analysis:</strong> Invoice auditing, tax compliance, financial reporting</p>
-                                        <p>⚡ <strong>Results:</strong> 95%+ accuracy with 300+ hours saved quarterly</p>
-                                    </div>
-                                </div>
-                            }
-                        >
-                            <div className="bg-gradient-to-b from-pink-200 to-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden opacity-80">
-                                <div className="p-8 pb-16">
-                                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                                        <div>
-                                            <h2 className="text-2xl font-bold text-gray-900">Financial Advisory & Tax Technician</h2>
-                                            <h3 className="text-xl font-semibold text-green-600 mb-2">Deloitte</h3>
-                                        </div>
-                                        <div className="text-gray-600 font-medium md:pr-10">
-                                            February 2019 – July 2021
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="space-y-3 text-gray-700">
-                                        <div className="flex items-start">
-                                            <span className="text-green-500 mr-2 mt-1">▶</span>
-                                            <p>Automated <strong>document linking and data entry</strong> using Puppeteer, improving efficiency and accuracy</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-green-500 mr-2 mt-1">▶</span>
-                                            <p>Audited invoices and tax returns to identify discrepancies and resolve client-vendor disputes</p>
-                                        </div>
-                                        <div className="flex items-start">
-                                            <span className="text-green-500 mr-2 mt-1">▶</span>
-                                            <p>Conducted <strong>financial analysis</strong> and supported compliance across multiple advisory engagements</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="mt-6 flex flex-wrap gap-2">
-                                        {['Puppeteer', 'Financial Analysis', 'Tax Compliance', 'Process Automation'].map((tech) => (
-                                            <span key={tech} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </FlipCard>
-                    </div>
-
+        <article className="rounded-3xl border border-white/60 bg-white/80 p-8 shadow-lg dark:border-gray-700/60 dark:bg-gray-800/70">
+            <div className="mb-4 flex flex-col md:flex-row md:items-start md:justify-between">
+                <div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{title}</h3>
+                    <p className="text-xl font-semibold text-purple-700 dark:text-purple-300">{company}</p>
                 </div>
+                <p className="font-medium text-gray-600 dark:text-gray-400">{dates}</p>
             </div>
-        </>
+            <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                {bullets.map((b, i) => (
+                    <li key={i} className="flex items-start">
+                        <span className="mr-2 mt-1 text-pink-500" aria-hidden="true">▶</span>
+                        <p>{b}</p>
+                    </li>
+                ))}
+            </ul>
+            <div className="mt-6 flex flex-wrap gap-2">
+                {tech.map((t) => (
+                    <span key={t} className="rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-800 dark:bg-purple-900/40 dark:text-purple-200">{t}</span>
+                ))}
+            </div>
+            {children}
+        </article>
     );
 }
 
-export default WorkExperience;
+export default function WorkExperience() {
+    return (
+        <section id="experience" className="mx-auto max-w-5xl px-4 py-12">
+            <h2 className="mb-10 text-center text-3xl font-bold text-gray-900 dark:text-white">Work experience</h2>
+            <div className="space-y-8">
+                <Job
+                    title="Software Developer"
+                    company="MacLean Engineering"
+                    dates="July 2021 – Present"
+                    bullets={maclean}
+                    tech={['C++', 'Qt / QML', 'Python', 'OPC UA', 'Embedded Linux', 'React', 'Node.js', 'PostgreSQL', 'Docker', 'Azure DevOps']}
+                >
+                    <p className="mt-6">
+                        <Link href="/hmi" className="font-semibold text-pink-600 underline-offset-4 hover:underline dark:text-pink-400">
+                            Read the case study: building operator screens for heavy machines →
+                        </Link>
+                    </p>
+                    <details className="mt-6 rounded-2xl bg-gradient-to-br from-gray-900 to-black p-6 text-white">
+                        <summary className="cursor-pointer font-semibold">Interactive demo: 3D point cloud viewer</summary>
+                        <div className="mt-4">
+                            <CompactPointCloudDemo />
+                            <p className="mt-4 text-sm text-gray-300">A small browser version of the kind of point cloud clustering and reporting tool I built in Python with Open3D. Sample data only.</p>
+                        </div>
+                    </details>
+                </Job>
+                <Job
+                    title="Financial Advisory & Tax Technician"
+                    company="Deloitte"
+                    dates="February 2019 – July 2021"
+                    bullets={deloitte}
+                    tech={['Puppeteer', 'Process automation', 'Financial analysis', 'Tax compliance']}
+                />
+            </div>
+        </section>
+    );
+}

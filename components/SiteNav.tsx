@@ -8,7 +8,7 @@ const links = [
     { href: '/#work', label: 'Work' },
     { href: '/goodsprout', label: 'Goodsprout' },
     { href: '/loopbot', label: 'LoopBot' },
-    { href: '/about', label: 'About' },
+    { href: '/about', label: 'About & résumé' },
 ];
 
 export default function SiteNav() {
