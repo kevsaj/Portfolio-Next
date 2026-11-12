@@ -81,6 +81,30 @@ export default function LoopBotPrivacy() {
                 when you sent it and what it said.
             </p>
 
+            <h2>Deleting your data</h2>
+            <p>LoopBot by KIS Studios has no accounts, so there is nothing to sign in to or close. To delete your data:</p>
+            <ol>
+                <li>
+                    <strong>Gameplay statistics:</strong> Go to <strong>Settings &gt; Share anonymous stats</strong> and turn it
+                    off. The app stops sending statistics, deletes its random install ID on your device and discards anything not
+                    yet sent. Statistics already received can&apos;t be linked back to you, so we can&apos;t single them out; they
+                    are deleted automatically within 24 months.
+                </li>
+                <li>
+                    <strong>Feedback messages:</strong> Email <a href="mailto:kisstudios98@gmail.com">kisstudios98@gmail.com</a>{' '}
+                    with the subject &quot;LoopBot data deletion&quot;, roughly when you sent the feedback and what it said. We
+                    delete the matching messages within 30 days and reply to confirm.
+                </li>
+                <li>
+                    <strong>Your progress and settings:</strong> These stay on your device. Uninstall LoopBot or clear its storage
+                    to delete them. If you copied a backup code, delete it wherever you saved it.
+                </li>
+            </ol>
+            <p>
+                We don&apos;t keep any of this data after deletion, except that statistics already received stay until their
+                24-month limit because we can&apos;t tell whose they are.
+            </p>
+
             <h2>What stays on your device</h2>
             <p>
                 Your progress (floors cleared, stars, hints, daily challenge streak, achievements and LoopBot&apos;s look), your
