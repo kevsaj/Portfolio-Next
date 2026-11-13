@@ -12,8 +12,10 @@ import {
     FEATURE_GRAPHIC,
     GITHUB_URL,
     ITCH_EMBED_URL,
+    APP_STORE_STATUS,
+    APP_STORE_URL,
     ITCH_URL,
-    PLAY_LIVE,
+    PLAY_STATUS,
     PLAY_URL,
     SCREENSHOTS,
     TESTER_FORM_URL,
@@ -116,7 +118,7 @@ const jsonLd = {
     '@type': 'VideoGame',
     name: 'LoopBot',
     url: ITCH_URL,
-    sameAs: [`${SITE_URL}/loopbot`, GITHUB_URL],
+    sameAs: [`${SITE_URL}/loopbot`, GITHUB_URL, ...(PLAY_STATUS !== 'soon' ? [PLAY_URL] : [])],
     image: `${SITE_URL}/loopbot/icon-512.png`,
     description: 'Program a little robot and climb a 50-floor skyscraper. LoopBot teaches loops, functions and logic through bite-sized puzzles.',
     genre: 'Puzzle',
@@ -127,19 +129,43 @@ const jsonLd = {
     publisher: { '@id': `${SITE_URL}/#business` },
 };
 
-/** Google Play slot: "coming soon" until PLAY_LIVE is switched on. */
+const playLinked = PLAY_STATUS !== 'soon';
+const appStoreLinked = APP_STORE_STATUS === 'live' && APP_STORE_URL !== '';
+
+const storeTag = 'whitespace-nowrap rounded-full bg-[#7ff2e0]/15 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-[#7ff2e0]';
+
+/** Google Play button: a link once the listing is up, a greyed-out label before that. */
 function PlaySlot({ className = '' }: { className?: string }) {
-    if (PLAY_LIVE) {
+    if (playLinked) {
         return (
-            <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 rounded-full border border-[#7ff2e0]/60 px-6 py-3 font-semibold text-[#ece6f5] transition hover:bg-white/10 ${className}`}>
+            <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center justify-center gap-2 rounded-full border border-[#7ff2e0]/60 px-6 py-3 font-semibold text-[#ece6f5] transition hover:bg-white/10 ${className}`}>
                 Get it on Google Play
+                {PLAY_STATUS === 'testing' && <span className={storeTag}>Early access</span>}
             </a>
         );
     }
     return (
         <span className={`inline-flex cursor-default items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-[#ece6f5]/60 ${className}`} aria-label="Google Play: coming soon">
             Google Play
-            <span className="rounded-full bg-[#7ff2e0]/15 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-[#7ff2e0]">Coming soon</span>
+            <span className={storeTag}>Coming soon</span>
+        </span>
+    );
+}
+
+/** App Store button: a label with no link until the iOS release is live. */
+function AppStoreSlot({ className = '' }: { className?: string }) {
+    if (appStoreLinked) {
+        return (
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center justify-center gap-2 rounded-full border border-[#7ff2e0]/60 px-6 py-3 font-semibold text-[#ece6f5] transition hover:bg-white/10 ${className}`}>
+                Download on the App Store
+            </a>
+        );
+    }
+    const label = APP_STORE_STATUS === 'testing' ? 'In testing' : 'Coming soon';
+    return (
+        <span className={`inline-flex cursor-default items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-[#ece6f5]/60 ${className}`} aria-label={`App Store: ${label.toLowerCase()}`}>
+            App Store
+            <span className={storeTag}>{label}</span>
         </span>
     );
 }
@@ -222,17 +248,18 @@ export default function LoopBot() {
                                         Play the free demo
                                     </a>
                                     <PlaySlot />
+                                    <AppStoreSlot />
                                 </div>
                                 <p className="mt-4 text-sm text-[#ece6f5]/70">
-                                    {PLAY_LIVE ? (
-                                        <>Now on Android. </>
-                                    ) : (
-                                        <>Coming soon to Android. </>
+                                    {PLAY_STATUS === 'live' && <>Now on Android. </>}
+                                    {PLAY_STATUS === 'testing' && <>Now in early access on Android. </>}
+                                    {PLAY_STATUS === 'soon' && <>Coming soon to Android. </>}
+                                    {!appStoreLinked && APP_STORE_STATUS === 'testing' && <>The iPhone version is in testing now. </>}
+                                    {PLAY_STATUS !== 'live' && (
+                                        <a href="#testers" className="font-semibold text-[#7ff2e0] underline-offset-2 hover:underline">
+                                            Become a tester
+                                        </a>
                                     )}
-                                    <a href="#testers" className="font-semibold text-[#7ff2e0] underline-offset-2 hover:underline">
-                                        Join the Android test
-                                    </a>
-                                    {!PLAY_LIVE && ' to play it first.'}
                                 </p>
                             </div>
                             <div className="relative -mx-6 sm:-mx-10 md:mx-0">
@@ -436,23 +463,35 @@ export default function LoopBot() {
                     <div className="rounded-3xl bg-gradient-to-br from-[#1b1d2a] to-[#2b2546] p-8 text-[#ece6f5] shadow-2xl md:p-12">
                         <div className="mx-auto max-w-2xl text-center">
                             <p className="text-sm font-semibold uppercase tracking-widest text-[#7ff2e0]">Become a tester</p>
-                            <h2 className="mt-2 text-3xl font-bold md:text-4xl">Help launch LoopBot on Android</h2>
+                            <h2 className="mt-2 text-3xl font-bold md:text-4xl">Help launch LoopBot</h2>
                             <p className="mt-5 text-lg text-[#ece6f5]/85">
-                                LoopBot is heading to Google Play, and I&apos;m looking for testers. You&apos;ll get the full game early, free,
-                                on your Android phone. All I ask is that you stay in the test for 14 days and tell me what you think: what
-                                was fun, what was confusing, what broke.
+                                {PLAY_STATUS === 'testing'
+                                    ? 'LoopBot is in early access on Google Play, and I’m looking for testers. '
+                                    : 'LoopBot is heading to Google Play, and I’m looking for testers. '}
+                                You&apos;ll get the full game early, free, on your Android phone. All I ask is that you stay in the test for
+                                14 days and tell me what you think: what was fun, what was confusing, what broke.
                             </p>
-                            <a
-                                href={testerHref}
-                                {...(TESTER_FORM_URL ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                                className="mt-8 inline-block rounded-full bg-[#7ff2e0] px-8 py-3 text-lg font-bold text-[#1b1d2a] shadow-lg transition hover:scale-105"
-                            >
-                                Join the test
-                            </a>
+                            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                                <a
+                                    href={testerHref}
+                                    {...(TESTER_FORM_URL ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                                    className="inline-block rounded-full bg-[#7ff2e0] px-8 py-3 text-lg font-bold text-[#1b1d2a] shadow-lg transition hover:scale-105"
+                                >
+                                    Join the test
+                                </a>
+                                {PLAY_STATUS === 'testing' && <PlaySlot />}
+                            </div>
                             <p className="mt-5 text-xs text-[#ece6f5]/60">
                                 Android 7.0 or newer. You&apos;ll need the Google account you use for the Play Store. I&apos;ll only use your
                                 email to invite you to the test.
+                                {PLAY_STATUS === 'testing' && ' Once you’re in, install LoopBot from its Google Play page.'}
                             </p>
+                            {!appStoreLinked && APP_STORE_STATUS === 'testing' && (
+                                <p className="mt-6 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-[#ece6f5]/80">
+                                    <span className="font-semibold text-[#7ff2e0]">On iPhone?</span> The iOS version is in testing right now and
+                                    is coming to the App Store soon.
+                                </p>
+                            )}
                         </div>
                     </div>
                 </section>
@@ -471,10 +510,19 @@ export default function LoopBot() {
                         <li><a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">GitHub</a></li>
                         <li><a href={`mailto:${CONTACT_EMAIL}?subject=LoopBot`} className="hover:text-pink-600">Contact</a></li>
                         <li>
-                            {PLAY_LIVE ? (
-                                <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">Google Play</a>
+                            {playLinked ? (
+                                <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">
+                                    Google Play{PLAY_STATUS === 'testing' && ' (early access)'}
+                                </a>
                             ) : (
                                 <span>Google Play: coming soon</span>
+                            )}
+                        </li>
+                        <li>
+                            {appStoreLinked ? (
+                                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">App Store</a>
+                            ) : (
+                                <span>App Store: {APP_STORE_STATUS === 'testing' ? 'in testing' : 'coming soon'}</span>
                             )}
                         </li>
                     </ul>

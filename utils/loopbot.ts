@@ -23,13 +23,26 @@ export const TESTER_FORM_URL = '';
 /** Source code. */
 export const GITHUB_URL = 'https://github.com/kevsaj/LoopBot';
 
+/** Where a store release stands. */
+export type StoreStatus = 'soon' | 'testing' | 'live';
+
 /**
- * Google Play listing. Set PLAY_LIVE to true on launch day: the hero and footer
- * then link to the store and drop the "coming soon" label.
- * Confirm the app ID matches the Play Console listing first.
+ * Google Play listing.
+ *   'soon'    → greyed-out "Coming soon" label, no link
+ *   'testing' → links to the listing with an "Early access" tag
+ *   'live'    → links to the listing as a normal release
+ * Switch to 'live' on launch day.
  */
 export const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.kisstudios.loopbot';
-export const PLAY_LIVE = false;
+export const PLAY_STATUS: StoreStatus = 'testing';
+
+/**
+ * Apple App Store listing. While APP_STORE_URL is empty the page shows a
+ * label with no link ("In testing" or "Coming soon"). Paste the App Store URL
+ * and set APP_STORE_STATUS to 'live' on launch day.
+ */
+export const APP_STORE_URL = '';
+export const APP_STORE_STATUS: StoreStatus = 'testing';
 
 /**
  * Phone screenshots, shown in a phone frame. Add the WebP files to
