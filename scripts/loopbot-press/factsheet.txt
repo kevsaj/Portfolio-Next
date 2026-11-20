@@ -1,0 +1,51 @@
+LoopBot: press fact sheet
+=========================
+
+Developer:      KIS Studios (Kevin Sajan), Ontario, Canada
+Release date:   December 2026 (Android, iPhone and iPad)
+Platforms:      Android, iOS, iPadOS, web demo (itch.io)
+Price:          Free (Tower 1, 50 floors). Optional one-time purchases planned.
+Languages:      English, French
+Age:            13+
+Website:        https://www.kisstudios.net/loopbot
+Press contact:  kisstudios98@gmail.com
+
+Short description (50 words)
+----------------------------
+LoopBot is a coding puzzle game. A rogue AI has taken over the city's tallest
+skyscraper, and you program a small maintenance robot to climb all 50 floors and
+take it back. Snap together blocks, press Run, and learn loops, functions and
+logic one floor at a time.
+
+Long description
+----------------
+VANTA, a rogue salvage AI, has taken over the Meridian Spire, the tallest
+skyscraper in the city, floor by floor. You're LoopBot, a small maintenance robot
+with a big job. With PATCH talking you through it over the radio, you climb all 50
+floors, one puzzle at a time, to take the tower back.
+
+You don't steer LoopBot. You program it. Plan a route with blocks like forward,
+turn and jump, press Run, and see if your plan works. When it doesn't, LoopBot
+shows you exactly where it went wrong, so you can fix it and try again.
+
+Every floor fits on one screen and teaches a single idea, from simple sequences in
+the Lobby to typing real code on the Rooftop. A Daily puzzle, achievements and
+unlockable looks keep players coming back. LoopBot is free, has no ads, works
+offline and is fully translated into French. It's built by one developer with
+React, Phaser and Capacitor, and every floor is checked by a solver so its par is
+always fair.
+
+Features
+--------
+- 50 free floors in five zones
+- Blocks plus a real-code view, typed code on the top floors
+- Daily puzzle with streaks
+- Achievements and the Locker
+- English and French
+- Offline, no account, no ads
+- Accessibility options
+
+About KIS Studios
+-----------------
+KIS Studios is Kevin Sajan's one-person studio in Ontario, Canada, making small
+games that make you think, plus websites and apps for clients.

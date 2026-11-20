@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import SiteHead from '../SiteHead';
+import { LOOPBOT_ICONS, LOOPBOT_THEME_COLOR } from '../../utils/loopbot';
 import SiteNav from '../SiteNav';
 import Footer from '../Footer';
 
@@ -18,7 +19,7 @@ interface LegalPageProps {
 export default function LegalPage({ title, description, path, updated, summary, children }: LegalPageProps) {
     return (
         <>
-            <SiteHead title={`${title} | KIS Studios`} description={description} path={path} icon="/loopbot/icon.webp" />
+            <SiteHead title={`${title} | KIS Studios`} description={description} path={path} icons={LOOPBOT_ICONS} themeColor={LOOPBOT_THEME_COLOR} />
             <SiteNav />
             <main className="mx-auto max-w-[70ch] px-4 pt-12 pb-20">
                 <Link href="/loopbot" className="text-sm font-semibold text-teal-700 hover:underline dark:text-[#7ff2e0]">

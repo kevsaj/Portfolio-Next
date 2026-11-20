@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kisstudios.net/sitemap.xml
+Sitemap: https://www.kisstudios.net/sitemap.xml
